@@ -11,8 +11,8 @@
 | 檔案 | 大小 | 用途 |
 |------|------|------|
 | `AddOns-20260528.zip` | ~74 MB | 完整插件包，解壓至 `Interface/AddOns/` |
-| `turtle-wow.exe` | ~33 MB | Turtle WoW 官方啟動器 / 更新程式 |
-| `WoW.exe` | ~4.9 MB | WoW 客戶端執行檔 |
+| `turtle-wow.exe` | ~33 MB | Turtle WoW 官方啟動器 / 更新程式  |
+| `WoW.exe` | ~4.9 MB | WoW 客戶端執行檔 / 用這個文件替代你本地的同名檔案，可以啟用自動拾取|
 
 ## 🔧 安裝方式
 
