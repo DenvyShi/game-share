@@ -1,0 +1,17 @@
+## Interface: 11200
+## Author: Neronix
+## Title: DeuceCommander |cff7fff7f -Ace2-|r
+## Notes: DeuceCommander
+## Title-zhCN:DeuceCommander ACE2类插件控制台
+## Notes-zhCN:为你使用的所有的ACE2类插件提供一个综合配置的平台。|N如果控制台被隐藏请输入/DeuceCommander standby 
+## Title-zhCN:|CFF0055FF[插件整合]|R|CFF7FFF7F插件控制台[ACE]|R
+## Notes-zhCN:|CFF0055FFDeuceCommander|R|N为你使用的所有的ACE2类插件提供一个综合配置的平台。|N如果控制台被隐藏请输入命令：/DeuceCommander standby 
+## X-Repple: 插件整合
+## Dependencies: !Libs
+## eMail: neronix@gmail.com
+## Version: 1.1
+## X-Category: Miscellaneous
+## X-eMail: neronix@gmail.com
+## SavedVariables: DeuceCommanderDB
+
+DeuceCommander.lua

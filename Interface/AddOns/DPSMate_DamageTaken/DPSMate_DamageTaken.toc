@@ -1,0 +1,13 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFDamage taken|r
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF伤害统计
+## Notes: Adds the modules for damage taken evaluation.
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_DamageTaken.lua
+DPSMate_DTPS.lua
+DPSMate_Details_DamageTaken.lua
+DPSMate_Details_DamageTaken.xml
+DPSMate_Details_DamageTakenTotal.lua
+DPSMate_Details_DamageTakenTotal.xml

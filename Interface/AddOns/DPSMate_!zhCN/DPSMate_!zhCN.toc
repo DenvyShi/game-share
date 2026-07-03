@@ -1,0 +1,12 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFLocal - zhCN|r
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF中文模块
+## Notes: Load this module in order to support the mandarin client.
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+Babble-Spell-2.3_zhCN.lua
+Babble-Boss-2.3_zhCN.lua
+NPCDB-1.0_zhCN.lua
+zhCN.lua
+DPSMate_ParserZHCN.lua

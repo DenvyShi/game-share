@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title: S_MailTo
+## Notes: Mail management and tracking.
+## Title-zhCN:|CFF33AAFF[辅助]|R收件人记录
+## Notes-zhCN:|CFF33AAFFS_MailTo|R|N在收件人位置添加一个下拉菜单，保存收件人的名字，以便可以长期使用，也可以将其移除。
+## X-Repple: 辅助
+## Author: Vincent
+## SavedVariablesPerCharacter: S_MailTo_List
+S_MailTo.lua

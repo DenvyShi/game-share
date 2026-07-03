@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title-zhCN:|CFFFFFF00[职业]|R|CFFFFF569盗贼|R交易界面开锁
+## Notes-zhCN:|CFFFFFF00EasyUnlock|R|N在交易界面显示开锁技能快捷键，使开锁极为方便。
+## X-Repple: 职业
+## Author: Athaeus (J. de Gram)
+## eMail: j.de.gram@gmail.com
+## Version: 1.15
+## DefaultState: disabled
+EasyUnlock.xml

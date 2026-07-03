@@ -1,0 +1,19 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   xsi:schemaLocation="http://www.blizzard.com/wow/ui/"> 
+	<Script file="sct_spellAlert_localization.lua"/>
+	<Script file="sct_spellAlert.lua"/>
+	
+	<Button name="DSCTOptionsSpellAlert" inherits="GameMenuButtonTemplate" text="DSCT_SPELLALERT_OPTION">
+		<Scripts>
+			<OnClick>
+				DSCTOptions_Title_Text:SetText(DSCT_SPELLALERT_OPTION);
+				DSCT_HideAllBG();
+				DSCT_ShowBG(1,180,-50,340,340);
+				DSCTOptionsFrame_Clear();
+				DSCTOptionsFrame_Load(DSCT_OptionCfg_SpellAlert);
+			</OnClick>
+			<OnLoad>
+				DSCT_SP_OnLoad();
+			</OnLoad>
+		</Scripts>
+	</Button>
+</Ui>

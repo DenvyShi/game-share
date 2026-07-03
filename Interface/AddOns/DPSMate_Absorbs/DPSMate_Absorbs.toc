@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFAbsorbs|r
+## Notes: Adds the absorbtion evaluation module.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF吸收模块
+## Notes-zhCN:|CFFFF8080DPSMate_Absorbs|R|NDPSMate增加吸收模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_Absorbs.lua
+DPSMate_Details_Absorbs.lua
+DPSMate_Details_Absorbs.xml
+DPSMate_Details_AbsorbsTotal.lua
+DPSMate_Details_AbsorbsTotal.xml

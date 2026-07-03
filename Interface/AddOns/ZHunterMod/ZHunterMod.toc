@@ -1,0 +1,38 @@
+## Interface: 11200
+## Title: ZHunterMod
+## Notes: Includes several features to make a hunter's life easier.
+## Title-zhCN: |CFFFFFF00[职业]|R|CFFABD473猎人|R辅助战斗的模块
+## Notes-zhCN:|CFFFFFF00ZHunterMod|R|N帮助猎人战斗的模块,各类守护,追踪,陷阱,宁神等。|N设置方法:|N 1、按住Alt键，可以移动当前按钮 |N2、按住Ctrl+Alt+Shift点击任意按钮，可以打开设置界面。
+## X-Repple: 职业
+## SavedVariablesPerCharacter: ZHunterMod_Saved
+Localization.EN.lua
+Localization.CN.lua
+Bindings.xml
+ZHunterMod.lua
+## 宁神射击模块 ##
+## ZHunterTranq.xml
+## 智能使用劣质弹药模块 ##
+ZHunterAIAmmo.lua
+## 自动脱掉所有装备模块 ##
+## ZHunterAIStrip.xml
+## 智能宠物攻击模块 ##
+ZHunterAIPetAttack.lua
+## 眩晕自动取消猎豹/群豹守护模块 ##
+ZHunterAIAntiDaze.lua
+## 猎人假死显示真实生命值模块 ##
+ZHunterAIFeignHealth.lua
+## 射击计时条模块 ##
+## ZHunterCastBar.xml
+## 技能按钮模块 ##
+ZSpellButtonTemplate.xml
+ZSpellButtonOptionsTemplate.xml
+## 所有的追踪法术 ##
+ZHunterButtonTrack.xml
+## 所有的守护法术 ##
+ZHunterButtonAspect.xml
+## 所有的陷阱法术 ##
+ZHunterButtonTrap.xml
+## 所有宠物法术 ##
+ZHunterButtonPet.xml
+
+## X-Turtle-Shell-Version: 1695202924

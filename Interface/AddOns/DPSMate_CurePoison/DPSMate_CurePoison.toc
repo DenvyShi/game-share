@@ -1,0 +1,17 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFCure poison|r
+## Notes: Adds the modules for cure poison evaluation.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF解毒模块
+## Notes-zhCN:|CFFFF8080DPSMate_CurePoison|R|NDPSMate增加解毒模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_CurePoison.lua
+DPSMate_CurePoisonReceived.lua
+DPSMate_Details_CurePoison.lua
+DPSMate_Details_CurePoison.xml
+DPSMate_Details_CurePoisonReceived.lua
+DPSMate_Details_CurePoisonReceived.xml
+DPSMate_Details_CurePoisonTotal.lua
+DPSMate_Details_CurePoisonTotal.xml

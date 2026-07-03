@@ -1,0 +1,134 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/..\FrameXML\UI.xsd">
+
+	<Button name="RaresRadarButton" frameStrata="MEDIUM" hidden="false" toplevel="true" enableMouse="true" movable="true" parent="UIParent">
+		<Size>
+			<AbsDimension x="26" y="26"/>
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER" relativeTo="UIParent" relativePoint="CENTER">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Scripts>
+			<OnDragStart>
+				Rares:OnDragStart()
+			</OnDragStart>
+			<OnDragStop>
+				Rares:OnDragStop()
+			</OnDragStop>
+			<OnMouseDown>
+				Rares:OnMouseDown(arg1)
+			</OnMouseDown>
+			<OnEnter>
+				Rares:ShowTooltip()
+			</OnEnter>
+			<OnLeave>
+				Rares:HideTooltip()
+			</OnLeave>
+			<OnUpdate>
+				Rares:OnUpdate()
+			</OnUpdate>
+		</Scripts>
+		<NormalTexture file="Interface\AddOns\Rares\img\RaresRadar"/>
+		<HighlightTexture file="Interface\AddOns\Rares\img\RaresHighlight"/>
+	</Button>
+
+	<Frame name="RaresInfoFrame" hidden="true" movable="true" parent="RaresRadarButton">
+		<Size>
+			<AbsDimension x="200" y="25"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOP" relativeTo="RaresRadarButton" relativePoint="TOP">
+				<Offset>
+					<AbsDimension x="0" y="24"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<TitleRegion setAllPoints="true"/>
+		<Frames>
+			<Button name="$parentButton">
+				<Size>
+					<AbsDimension x="200" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="CENTER">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentText" inherits="GameFontNormal" wraponspaces="true">
+							<Anchors>
+								<Anchor point="CENTER">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<Shadow>
+								<Color r="0" g="0" b="0" />
+								<Offset>
+									<AbsDimension x="0.8" y="-0.8" />
+								</Offset>
+							</Shadow>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Button>
+		</Frames>
+	</Frame>
+
+	<Frame name="RaresModelFrame" hidden="true" movable="true" parent="RaresInfoFrame">
+		<Size>
+			<AbsDimension x="200" y="200"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOP" relativeTo="RaresInfoFrame" relativePoint="TOP">
+				<Offset>
+					<AbsDimension x="0" y="204"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<TitleRegion setAllPoints="true"/>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture name="$parentBackground" file="Interface\FullScreenTextures\LowHealth" alphaMode="ADD">
+					<Size>
+						<AbsDimension x="200" y="200"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOP">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<PlayerModel name="$parent3D" frameStrata="HIGH" hidden="true" toplevel="true" enableMouse="true" movable="true">
+				<Size>
+					<AbsDimension x="200" y="200"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOP">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnUpdate>
+						Rares:ModelOnUpdate()
+					</OnUpdate>
+				</Scripts>
+			</PlayerModel>
+		</Frames>
+	</Frame>
+
+</Ui>

@@ -1,0 +1,7 @@
+## Interface: 11200
+## Title:|cffFF4500[C]|R[工具] BEF插件错误收集
+## Notes:用于收集插件或宏出现的错误。设置命令：/error
+## Author: Baudzilla, wolftankk, Affli@RU-Howling Fjord, 1.12by狗血编剧男
+## Version: 1.5
+
+BaudErrorFrame.xml

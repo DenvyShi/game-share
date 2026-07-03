@@ -1,0 +1,118 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
+	<Script file="localization.sc.lua"/>
+	<Script file="localization.tc.lua"/>
+	<Script file="HunterBar_FeedButton.lua"/>
+	<Frame name="FeedButtonFrame" parent="UIParent" movable="true" enableMouse="true" hidden="true">
+		<Size>
+			<AbsDimension x="1" y="1"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativePoint="CENTER">
+				<Offset>
+	                <AbsDimension x="65" y="-206"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Frame name="FeedButtonMover" setAllPoints="true" frameStrata="MEDIUM" hidden="true">
+				<Scripts>
+					<OnMouseDown>
+						if (arg1 == "LeftButton" and not FeedPetButton_Food.Locked) then
+							FeedButtonFrame:StartMoving();
+						end
+					</OnMouseDown>
+					<OnMouseUp>
+						if (arg1 == "LeftButton" and not FeedPetButton_Food.Locked) then
+							FeedButtonFrame:StopMovingOrSizing();
+						elseif (arg1 == "RightButton") then
+							if (IsShiftKeyDown()) then
+								FeedButton_ToggleLock();
+							else
+								FeedButton_ToggleSize();
+							end
+						end
+					</OnMouseUp>
+					<OnEnter>
+						FeedButtonMover_OnEnter();
+					</OnEnter>
+					<OnLeave>
+						FeedButton_OnLeave();
+					</OnLeave>
+				</Scripts>
+				<Size>
+					<AbsDimension x="10" y="10"/>
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOMRIGHT" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="OVERLAY">
+						<Texture file="Interface\Minimap\MiniMap-TrackingBorder">
+							<Size>
+								<AbsDimension x="20" y="20"/>
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+			</Frame>
+			<Button name="FeedButton" enableMouse="true" inherits="ItemButtonTemplate" hidden="true" alphaMode="ADD">
+				<Scripts>
+					<OnLoad>
+						FeedButton_OnLoad();
+					</OnLoad>
+					<OnEnter>
+						FeedButton_OnEnter();
+					</OnEnter>
+					<OnLeave>
+						FeedButton_OnLeave();
+					</OnLeave>
+					<OnClick>
+						FeedButton_OnClick(arg1);
+					</OnClick>
+					<OnDoubleClick>
+						FeedButton_OnClick(arg1, true);
+					</OnDoubleClick>
+					<OnReceiveDrag>
+						FeedButton_OnReceiveDrag();
+					</OnReceiveDrag>
+					<OnEvent>
+						FeedButton_OnEvent(event);
+					</OnEvent>
+				</Scripts>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="-5" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BORDER">
+						<Texture name="FeedButtonIconTexture"/>
+						<FontString name="FeedButtonCountWarn" font="Fonts\ARIALN.TTF" outline="THICK" justifyH="RIGHT" hidden="true">
+							<Anchors>
+								<Anchor point="CENTER">
+									<Offset>
+										<AbsDimension x="-1" y="-1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<FontHeight>
+								<AbsValue val="25"/>
+							</FontHeight>
+							<Color r="1.0" g="0.2" b="0.2"/>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Button>
+		</Frames>
+	</Frame>	
+</Ui>

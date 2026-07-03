@@ -1,0 +1,84 @@
+[9-18][猎人]ZHunterMod 1.12.14 完全汉化版[猎人专用,各类守护,追踪,陷阱,宁神等]
+
+1.12.13官方原版：http://www.curse-gaming.com/en/wow/download-20122.html
+
+1.12.14官方原版：http://www.curse-gaming.com/cn/wow/download-20291.html
+
+ps：这个插件对其他语言翻译不友好，只有最基本的技能在Localization，其他设置界面都在各个lua文件里面，翻译的累死
+pps：我的猎人只有41级，不能完整的测试这个汉化，请各位猎人达人能把错误或者出错的信息发上来，谢谢
+
+功能模块包括：
+ZHunterButtonAspects 所有的守护法术（ps：已经单人测试，正常）
+ZHunterButtonTrack 所有的追踪法术（ps：已经单人测试，正常）
+ZHunterButtonTraps 所有的陷阱法术（ps：已经单人测试，正常）
+ZHunterButtonPet 所有宠物法术（ps：已经单人测试，正常）
+ZHunterCastBar 射击计时条模块（ps：已经单人测试，正常）
+ZHunterTranq 宁神射击模块（ps：未测试，小猎人还不会宁神，5555）
+ZHunterAIStrip 自动脱掉所有装备模块（ps：已经单人测试，正常，pps：要先进入战斗然后脱离战斗才能脱衣，直接非战斗状态假死没用，其实可以和假死一起做一个宏）
+ZHunterAIPetAttack 智能宠物攻击模块（ps：未测试）
+ZHunterAIFeignHealth 猎人假死显示真实生命值模块（ps：已经单人测试，正常）
+ZHunterAIAntiDaze 眩晕自动取消猎豹/群豹守护模块（ps：9-18修正，原来是原程序不对，单人测试正常）
+ZHunterAIAmmo 智能使用劣质弹药模块（ps：测试正常）
+
+通用操作：
+Alt+左键移动，右键弹出所有的技能.
+CTRL+ALT+SHIFT+Click 会打开设置窗
+
+
+ZHunterButtonAspects 设置命令
+/zaspect reset - 重置守护模块和参数设置 
+/zaspect options - 打开守护模块设置窗口 
+
+ZHunterButtonTrack 设置命令
+/ztrack reset - 重置追踪模块和参数设置 
+/ztrack options - 打开追踪模块设置窗口 
+
+ZHunterButtonTraps 设置命令
+/ztrap reset - 重置陷阱模块和参数设置 
+/ztrap options - 打开陷阱模块设置窗口 
+
+ZHunterButtonPet 设置命令
+/zpet reset - 重置宠物模块和参数设置 
+/zpet options - 打开宠物模块设置窗口 
+
+ZHunterCastBar 设置命令
+/zcastbar move - 让你的计时条移动到你喜欢的地方 
+/zcastbar auto - 切换自动射击计时条开启或关闭 
+/zcastbar aimed - 切换瞄准射击计时条开启或关闭
+
+ZHunterTranq 设置命令
+/ztranq - 增加当前选择的猎人到宁神射击循环队列 
+/ztranq - 设置估算的狂暴时间 
+/ztranq autofrenzy - 切换当进入战斗后是否自动设置狂暴计时条
+/ztranq announce on - 打开宁神射击宣告 
+/ztranq announce off - 关闭宁神射击宣告 
+/ztranq announce - 设置在哪个频道报告你的宁神射击动作 
+举例: 
+/ztranq announce 团队
+/ztranq announce 频道 3 
+
+ZHunterAIStrip 设置命令
+/zstrip display - 显示自动脱衣按钮
+/zstrip toggle - 切换是否启用自动脱衣按钮 
+
+ZHunterAIAmmo 设置命令
+/zammo on - 开启智能弹药 
+/zammo off - 关闭智能弹药
+
+ZHunterAIFeignHealth 设置命令
+/zfeignhealth - 切换是否显示假死真实生命值
+
+ZHunterAIAntiDaze 设置命令
+/zantidaze - 切换是否启用眩晕自动取消猎豹/群豹守护 
+
+ZHunterAIPetAttack 设置命令
+/zpetattack - 切换智能宠物攻击开启或关闭 
+/script ZPetAttackOrReturn() - 定义宏让你的宠物攻击或跟随你 
+
+猎人专用函数
+ZMarkTarget() - 对没有标记的目标进行标记 
+IsPetDead() - 当你的宠物死亡返回1, 其他其他返回nil. ZHunterButtonPet模块必须启用
+
+【9-18更新】
+ZHunterAIAntiDaze 模块修正，已经可以用了，单人测试正常，欢迎大家队伍试用
+顺便修正了宁神射击的同样问题，请各位测试

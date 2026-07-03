@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFHealing and Absorbs|r
+## Notes: Adds the modules for the healing and absorbs evaluation.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF治疗和吸收模块
+## Notes-zhCN:|CFFFF8080DPSMate_HealingAndAbsorbs|R|NDPSMate增加治疗和吸收模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_HealingAndAbsorbs.lua
+DPSMate_Details_HealingAndAbsorbs.lua
+DPSMate_Details_HealingAndAbsorbs.xml
+DPSMate_Details_HealingAndAbsorbsTotal.lua
+DPSMate_Details_HealingAndAbsorbsTotal.xml

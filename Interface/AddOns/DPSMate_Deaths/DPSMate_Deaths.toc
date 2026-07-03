@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFDeaths|r
+## Notes: Adds the modules for death evaluation.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF死亡模块
+## Notes-zhCN:|CFFFF8080DPSMate_Deaths|R|NDPSMate增加死亡模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_Deaths.lua
+DPSMate_Details_Deaths.lua
+DPSMate_Details_Deaths.xml
+DPSMate_Details_DeathsTotal.lua
+DPSMate_Details_DeathsTotal.xml

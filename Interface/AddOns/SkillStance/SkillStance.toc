@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title: SkillStance
+## Notes: Switches stances based on skill requirements.
+## Title-zhCN:|CFFFFFF00[职业]|R|CFFC79C6E战士|R姿态切换助手
+## Notes-zhCN:|CFFFFFF00SkillStance|R|N战士根据技能自动换姿态。|N提示：因为切换姿态引起的公共cd，必须至少按两次或3次相关技能。
+## X-Repple: 职业
+## Author: Taloquin, 1.12 modify by 狗血编剧男
+## DefaultState: disabled
+SkillStance.xml

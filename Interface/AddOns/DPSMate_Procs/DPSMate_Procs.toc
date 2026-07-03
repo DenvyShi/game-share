@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFProcs|r
+## Notes: Adds the modules for the proc evaluation.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF触发模块
+## Notes-zhCN:|CFFFF8080DPSMate_Procs|R|NDPSMate增加触发模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_Procs.lua
+DPSMate_Details_Procs.lua
+DPSMate_Details_Procs.xml
+DPSMate_Details_ProcsTotal.lua
+DPSMate_Details_ProcsTotal.xml

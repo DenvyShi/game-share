@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFInterrupts|r
+## Notes: Adds the modules for the interrupt evaluation.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF打断模块
+## Notes-zhCN:|CFFFF8080DPSMate_Interrupts|R|NDPSMate增加打断模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_Interrupts.lua
+DPSMate_Details_Interrupts.lua
+DPSMate_Details_Interrupts.xml
+DPSMate_Details_InterruptsTotal.lua
+DPSMate_Details_InterruptsTotal.xml

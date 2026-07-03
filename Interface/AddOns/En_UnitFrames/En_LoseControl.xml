@@ -1,0 +1,23 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+	..\FrameXML\UI.xsd">
+
+	<Script file="En_LoseControl.lua"/>
+	
+	<GameTooltip name="En_LCTooltip" frameStrata="TOOLTIP" hidden="true" inherits="GameTooltipTemplate">
+		<Scripts>
+			<OnLoad>
+				this:SetOwner(UIParent,"ANCHOR_NONE")
+			</OnLoad>
+		</Scripts> 
+	</GameTooltip>
+	<Frame name="En_playerDebuffFrame" hidden="false">
+		<Scripts>
+			<OnLoad>
+				En_LCPlayer_OnLoad()
+			</OnLoad>
+			<OnEvent>
+				En_LCPlayer_OnEvent()
+			</OnEvent>			
+		</Scripts>
+	</Frame>
+</Ui>

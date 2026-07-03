@@ -1,0 +1,10 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFDebug|r
+## Notes: Adds the debug module.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF除错模块
+## Notes-zhCN:|CFFFF8080DPSMate_Debug|R|NDPSMate增加除错模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_Debug.lua

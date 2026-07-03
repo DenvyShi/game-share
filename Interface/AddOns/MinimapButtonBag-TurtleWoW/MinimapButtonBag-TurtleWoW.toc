@@ -1,0 +1,13 @@
+## Interface: 11200
+## Title: MBB(小地图按钮收纳)-TurtleWoW
+## Version: 0.508
+## Author: Tunhadil, LaYt (+McPewPew)
+## X-Website: https://github.com/McPewPew/MinimapButtonBag-TurtleWoW
+## X-Date 2021-02-21
+## Notes: 收纳小地图按钮，通过一个菜单按钮访问它们！|nReduces minimap buttons and makes them accessible through a menu!
+## Title-zhCN:|CFF0055FF[插件整合]|R|CFF7FFF7F小地图收纳按钮|R
+## Notes-zhCN:|CFF0055FFMinimapButtonFrame|R|N整合你的小地图按钮，使他们成为一个可移动的框架。|N命令：/mbb
+## SavedVariablesPerCharacter: MBB_Exclude, MBB_Options
+localization-zhCN.lua
+# localization-enGB.lua
+MBB.xml

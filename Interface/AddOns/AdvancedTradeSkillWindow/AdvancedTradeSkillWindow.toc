@@ -1,0 +1,17 @@
+## Interface: 11200
+## Title: AdvancedTradeSkillWindow
+## Notes: An improved window for your tradeskills for Vanilla
+## Title-zhCN:|CFF33AAFF[商业]|R扩展商业制作面板
+## Notes-zhCN:|CFF00CD00AdvancedTradeSkillWindow|R|N扩展默认制作界面，使之显示更多的信息，并提供过滤功能等。
+## X-Repple: 商业
+## RequiredDeps:
+## Version: v0.5.6a 
+## SavedVariables: atsw_orderby, atsw_bankitemlist, atsw_merchantlist, atsw_itemlist, atsw_considerbank, atsw_consideralts, atsw_considermerchants, atsw_autobuy, atsw_multicount, atsw_recipetooltip, atsw_customsorting, atsw_customheaders, atsw_displayshoppinglist, atsw_disabled, atsw_savedqueue, atsw_savednecessaryitems
+
+## X-ReleaseDate: $Date: 2018-07-16 $
+## X-Email: laytya@gmail.com
+## X-Category: Tradeskill
+## X-Website: https://github.com/laytya/AdvancedTradeSkillWindow-vanilla
+
+atsw.xml
+atsw_customsorting.xml

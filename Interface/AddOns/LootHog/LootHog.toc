@@ -1,0 +1,12 @@
+## Interface: 11200
+## Title: LootHog
+## Notes: Help track /random 100 rolls.
+## Title-zhCN:|CFFEE7600[团长工具]|RROLL点助手
+## Notes-zhCN:|CFFEE7600LootHog|R|NROLL点后自动统计团队里玩家的ROLL点数，建议团长使用。|N命令：/lh|N命令：/loothog
+## X-Repple: 团队
+## Author: Suan (Khaz'goroth)
+## DefaultState: disabled
+## SavedVariables: loothog_settings, loothog_rollStats
+## OptionalDeps:myAddOns
+## Dependencies:
+LootHog.xml

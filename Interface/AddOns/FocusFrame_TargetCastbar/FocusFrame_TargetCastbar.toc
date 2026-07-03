@@ -1,0 +1,13 @@
+## Interface: 11200
+## Title: FocusFrame 目标施法条
+## Notes: Adds an extra castbar for your current target.
+## Title-zhCN:|CFFDD66DD[界面]|R焦点头像-目标施法监视
+## Notes-zhCN:|CFFDD66DDFocusFrame_TargetCastbar|R|N为当前目标添加额外的施法。
+## X-Repple: 界面
+## RequiredDeps: FocusFrame
+## LoadOnDemand: 1
+## LoadWith: FocusFrame
+## Author: Wardz,https://github.com/wardz/FocusFrame_TargetCastbar/releases
+
+Frames.lua
+TargetCastbar.lua

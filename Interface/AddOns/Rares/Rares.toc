@@ -1,0 +1,27 @@
+## Interface: 11200
+## Title: |cFF00CCFFRares|r v0.6.0 |cFF1EFF00 -Ace2-|r
+## Notes: Rare npcs scanner and tracker
+## Title-zhCN:|CFF33AAFF[辅助]|R精英侦测[红龙]
+## Notes-zhCN:|CFF33AAFFRares|R|N稀有怪 NPC 稀有精英探测器.|N命令：/rares
+## Version: 0.6.3
+## Author: nulajedan
+## OptionalDeps: Ace2, FuBar, Tablet-2.0
+## SavedVariables: RaresDB
+libs\AceLibrary\AceLibrary.lua
+libs\AceOO-2.0\AceOO-2.0.lua
+libs\AceConsole-2.0\AceConsole-2.0.lua
+libs\AceEvent-2.0\AceEvent-2.0.lua
+libs\AceAddon-2.0\AceAddon-2.0.lua
+libs\AceLocale-2.0\AceLocale-2.0.lua
+libs\AceDB-2.0\AceDB-2.0.lua
+libs\Tablet-2.0\Tablet-2.0.lua
+libs\Dewdrop-2.0\Dewdrop-2.0.lua
+libs\FuBarPlugin-2.0\FubarPlugin-2.0.lua
+Rares.xml
+localization.enUS.lua
+RaresDatabase.lua
+RaresModel.lua
+Rares.lua
+RaresFu.lua
+
+## X-Turtle-Shell-Version: 1693800830

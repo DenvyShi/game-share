@@ -1,0 +1,25 @@
+﻿## X-MrBCat-Version: 2024-11-27 18:40:17
+## Interface: 11200
+## Title:|cffFF4500[职业]|R[|CFFFFFFFF治疗|R] 治疗助手
+## Notes: |CFFFFFF00RedHeart|R|N智能治疗坦克/全团。|N命令：|N/run Heart_ActionHeal("standard")|N/run Heart_HealMostWounded("standard")
+## Author: raynorli,黑猫插件
+## Version: 24-06-07
+## SavedVariables: C_update_player_data_time
+## DefaultState: disabled
+## SavedVariablesPerCharacter: Heart_Config, Heart_SavedProfiles
+MyMinimapButton.lua
+SeaHooks\Sea.util.lua
+Commod\C.xml
+Commod\C_AKA.lua
+Commod\C_ClearTooltip.lua
+Commod\C_GetBuffData.lua
+Commod\C_GetDebuffData.lua
+Commod\C_GetSpellData.lua
+Commod\C_GetUnitID.lua
+Commod\C_UnitName.lua
+Commod\C_Print.lua
+Commod\C_SetPlayerData.lua
+Commod\C_UnitGotBuff.lua
+Commod\C_UnitGotDebuff.lua
+Commod\C_UpdatePlayerData.lua
+Heart.xml

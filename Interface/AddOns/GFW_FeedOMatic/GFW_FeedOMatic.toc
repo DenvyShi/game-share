@@ -1,0 +1,17 @@
+## Interface: 11200
+## Version: M1
+## Title: Fizzwidget Feed-O-Matic
+## Author: Gazmik Fizzwidget
+## Notes: Helps a Hunter keep his pets well fed (and the food in his inventory under control)
+## Title-zhCN:|CFFFFFF00[职业]|R|CFFABD473猎人|R宠物喂食助手
+## Notes-zhCN:|CFFFFFF00GFW_FeedOMatic|R|N个性声音提醒喂食宠物，点击宠物头像即可完成喂食，自动选择食物。|N命令：/pf
+## X-Repple: 职业
+## SavedVariables: FOM_Config, FOM_FoodQuality, FOM_AddedFoods, FOM_RemovedFoods, FOM_Cooking, FOM_QuestFood, FOM_LocaleInfo
+GFWUtils.lua
+GFWTable.lua
+GFWTooltip.lua
+localization.lua
+FeedOMatic_Emotes.lua
+FeedOMatic_Foods.lua
+FeedOMatic.lua
+FeedOMatic.xml

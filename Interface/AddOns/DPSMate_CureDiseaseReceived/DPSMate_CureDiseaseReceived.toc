@@ -1,0 +1,12 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFCure disease received|r
+## Notes: Adds the modules for cure disease received evaluation.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF解除疾病模块[接受]
+## Notes-zhCN:|CFFFF8080DPSMate_CureDiseaseReceived|R|NDPSMate增加受到解除疾病模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate, DPSMate_CureDisease
+
+DPSMate_CureDiseaseReceived.lua
+DPSMate_Details_CureDiseaseReceived.lua
+DPSMate_Details_CureDiseaseReceived.xml

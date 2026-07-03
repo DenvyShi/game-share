@@ -1,0 +1,17 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFLift magic|r
+## Notes: Adds the modules for lift magic evaluation.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF魔法模块[施加]
+## Notes-zhCN:|CFFFF8080DPSMate_LiftMagic|R|NDPSMate增加被施加魔法模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_LiftMagic.lua
+DPSMate_LiftMagicReceived.lua
+DPSMate_Details_LiftMagic.lua
+DPSMate_Details_LiftMagic.xml
+DPSMate_Details_LiftMagicReceived.lua
+DPSMate_Details_LiftMagicReceived.xml
+DPSMate_Details_LiftMagicTotal.lua
+DPSMate_Details_LiftMagicTotal.xml

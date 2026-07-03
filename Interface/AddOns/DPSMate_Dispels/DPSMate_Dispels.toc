@@ -1,0 +1,17 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFDispels|r
+## Notes: Adds the modules for general dispel evaluation.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF驱散模块
+## Notes-zhCN:|CFFFF8080DPSMate__Dispels|R|NDPSMate增加驱散模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_Dispels.lua
+DPSMate_DispelsReceived.lua
+DPSMate_Details_Dispels.lua
+DPSMate_Details_Dispels.xml
+DPSMate_Details_DispelsReceived.lua
+DPSMate_Details_DispelsReceived.xml
+DPSMate_Details_DispelsTotal.lua
+DPSMate_Details_DispelsTotal.xml

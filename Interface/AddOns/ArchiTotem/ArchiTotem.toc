@@ -1,0 +1,12 @@
+﻿## X-MrBCat-Version: 2024-03-07 03:39:32
+## Interface: 11200
+## Title: |cffFF4500[职业]|r[|cff0070de萨满|r] ATotem 图腾助手
+## Notes: SM图腾助手ctrl+右键移动框体
+## Version: 1.41
+## Author: Nahoom of Dragonblight EU MrBCat
+## X-Credits: RoadBlock, Lichery - localizations
+## SavedVariablesPerCharacter: ArchiTotem_TotemData, ArchiTotem_Options
+## DefaultState: disabled
+Locale\Localization.lua
+
+ArchiTotem.xml

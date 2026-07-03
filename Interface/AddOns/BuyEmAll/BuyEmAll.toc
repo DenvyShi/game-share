@@ -1,0 +1,13 @@
+﻿## Interface: 11200
+## Title:|cffFF4500[C]|R[增强] BuyEmAll批量购买
+## Title-zhCN: |cffFF4500[C]|R[增强] BuyEmAll批量购买
+## Notes:打开商人界面时，SHIFT+右键物品，|N可以批量购买大于20个的此物品|N并可依据你的金钱和背包空位自动给出最大的购买数量。
+## Notes-zhCN: 打开商人界面时，SHIFT+右键物品，|N可以批量购买大于20个的此物品|N并可依据你的金钱和背包空位自动给出最大的购买数量。
+## Author: Cogwheel
+## Url: http://cogwheel.wowinterface.com
+## eMail: mcogwheel@gmail.com
+## Version: 2.2
+## X-Category: Interface Enhancements
+localization.lua
+BuyEmAll.lua
+BuyEmAll.xml

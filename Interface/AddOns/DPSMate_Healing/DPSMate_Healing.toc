@@ -1,0 +1,15 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFRaw healing|r
+## Notes: Adds the modules for the raw healing evaluation.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF治疗模块
+## Notes-zhCN:|CFFFF8080DPSMate_Healing|R|NDPSMate增加治疗模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_Healing.lua
+DPSMate_HPS.lua
+DPSMate_Details_Healing.lua
+DPSMate_Details_Healing.xml
+DPSMate_Details_HealingTotal.lua
+DPSMate_Details_HealingTotal.xml

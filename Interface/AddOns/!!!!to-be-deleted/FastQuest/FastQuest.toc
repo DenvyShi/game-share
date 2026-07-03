@@ -1,0 +1,22 @@
+﻿## Interface: 11200
+## Author: Vashen (Vashen@msn.com) - discontinued, Alfred (http://statue.sayya.org/QuestLibrary), Arith Hsu
+## Title: FastQuest (Alfred Modded)
+## Title-zhTW: |cFF00FF00[任務]|rFastQuest任务通报 自動交接
+## Title-zhCN: |cFF00FF00[任务]|rFastQuest任务通报 自动交接
+## Notes: |cff00CC33Displays quest levels, loads active quests into Questtracker and removes then upon completion, Notifies your party/raid members about your progress, allows to do most turn quests with a single click! 
+## Notes-zhTW: 自動通知隊友任務進度、自動追蹤任務、完成任務自動清除於任務追蹤視窗、在任務日志和任務跟蹤上增加任務級別顯示.
+## Notes-zhCN: 命令: /fq 自动通知队友任务进度、自动追踪任务、自动交接任务、在任务日志和任务跟踪上增加任务级别显示，按住ctrl 左键或右键点击任务列表可发送相关信息.
+## Title-zhCN:|CFF33AAFF[辅助]|R任务进度通告
+## Notes-zhCN:|CFF33AAFFFastQuest|R|N自动通知队友任务进度、自动追踪任务、自动交接任务.|N在任务日志和任务跟踪上增加任务级别显示.|N按住ctrl 左键或右键点击任务列表可发送相关信息..|N命令：/fq
+## X-Repple: 辅助
+## UIType: Quest
+## UIType-zhTW: 任務相關
+## UIType-zhCN: 任务相关
+## Version: 2.11.3-b3
+## OptionalDeps:
+## SavedVariables: FQD
+FastQuest.xml
+
+
+
+## X-Turtle-Shell-Version: 1693790105

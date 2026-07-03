@@ -1,0 +1,47 @@
+﻿## Interface: 11200
+## Author: Bhattu, fixes: laytya, dein0s，1.18版本修复：武藤纯子酱，灵灵漆，Sunelegy
+## Title: Chronometer |cff7fff7f -Ace2-|r
+## Title-zhCN: |CFF33AAFF[辅助]|RChronometer - 法术计时器
+## Notes: Chronometer - an Ace2 Timer Mod based on AceTimer for Vanilla
+## Notes-zhCN: Chronometer - 基于AceTimer的Ace2计时条插件
+## Version: 1.18
+## DefaultState:
+## Dependencies: !Libs
+## OptionalDeps: Ace2, Babble-2.2, PaintChipsLib, CompostLib, CandyBar, Deformat, GratuityLib, SpellCacheLib, ParserLib, DewdropLib
+## SavedVariables: ChronometerDB
+
+## X-ReleaseDate: $Date: 2022-08-25 $
+## X-Email: laytya@gmail.com
+## X-Category: Combat
+## X-Website: https://github.com/laytya/Chronometer-vanilla
+## X-Embeds: Ace2, Babble-2.2, PaintChipsLib, CompostLib, CandyBar, Deformat, GratuityLib, SpellCacheLib, ParserLib, DewdropLib
+
+libs\CallbackHandler-1.0\CallbackHandler-1.0.xml 
+
+libs\ParserLib\ParserLib.lua
+libs\ParserLib\FixGlobalString.lua
+libs\ParserLib\optimizer-enUS.lua 
+libs\ParserLib\optimizer-koKR.lua 
+libs\ParserLib\optimizer-zhCN.lua
+
+libs\CandyBar-2.0\CandyBar-2.0.lua
+libs\LibSharedMedia-3.0\lib.xml
+
+Core\Chronometer-Locale.lua
+Core\Chronometer.lua
+
+
+Data\Druid.lua
+Data\Hunter.lua
+Data\Mage.lua
+Data\Paladin.lua
+Data\Priest.lua
+Data\Rogue.lua
+Data\Shaman.lua
+Data\Warlock.lua
+Data\Warrior.lua
+Data\Racial.lua
+Data\Common.lua
+
+
+## X-Turtle-Shell-Version: 1700382333

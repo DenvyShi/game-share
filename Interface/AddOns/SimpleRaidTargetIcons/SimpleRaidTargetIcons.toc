@@ -1,0 +1,10 @@
+## Interface: 11200
+## Title: |cffFF4500[C]|R[可选] 目标标记助手V2
+## Author: RoadBlock
+## Version: 2.13
+## Notes:团队/队伍内双击目标快速给怪物标记。|N设置命令：/srti
+## X-Repple: 团队
+## X-Credits: Brodrick (aka Kirov) original author
+## SavedVariables: SRTISaved
+Localization.lua
+SimpleRaidTargetIcons.lua

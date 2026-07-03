@@ -1,0 +1,683 @@
+<!-- MikeyHealthBar V0.1 -->
+<!-- Options Pane Definition -->
+
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   xsi:schemaLocation="http://www.blizzard.com/wow/ui/"> 
+	<Script file="options.lua"/>
+	
+	<!-- CHECKBUTTON TEMPLATE -->
+	<CheckButton name="DSCTCheckTemplate" inherits="UICheckButtonTemplate" virtual="true">
+		<HitRectInsets>
+			<AbsInset left="0" right="0" top="0" bottom="0"/>
+		</HitRectInsets>
+		<Scripts>
+			<OnClick>				
+				DSCT_OptionsCheckButtonOnClick(this:GetParent():GetName(),this:GetName());
+			</OnClick>
+			<OnEnter>
+				if ( this.tooltipText ) then
+					GameTooltip_AddNewbieTip(this.tooltipText, 1.0, 1.0, 1.0);
+				end
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
+		</Scripts>
+	</CheckButton>
+	
+	<!-- SLIDER TEMPLATE -->
+	<Slider name="DSCTSliderTemplate" frameStrata="MEDIUM" inherits="OptionsSliderTemplate" virtual="true">
+		<Scripts>
+			<OnEnter>
+				if ( this.tooltipText ) then
+					GameTooltip_AddNewbieTip(this.tooltipText, 1.0, 1.0, 1.0);
+				end
+			</OnEnter>
+			<OnValueChanged>
+				DSCT_OptionsSliderOnValueChanged();
+			</OnValueChanged>
+			<OnMouseUp>
+				DSCT_OptionsSliderMouseUp();
+			</OnMouseUp>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
+		</Scripts>
+	</Slider >
+	
+	<Frame name="DSCTColorPickerTemplate" frameStrata="MEDIUM" virtual="true">		
+		<Frames>
+			<Button name="$parent_ColorSwatch">
+				<Size>
+					<AbsDimension x="20" y="20"/>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parent_SwatchBg">
+							<Size>
+								<AbsDimension x="18" y="18"/>
+							</Size>
+							<Anchors>
+								<Anchor point="CENTER">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<Color r="1.0" g="1.0" b="1.0"/>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>
+						DSCT_OpenColorPicker(this:GetParent());
+					</OnClick>
+					<OnEnter>
+						getglobal(this:GetName().."_SwatchBg"):SetVertexColor(NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b);
+					</OnEnter>
+					<OnLeave>
+						getglobal(this:GetName().."_SwatchBg"):SetVertexColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
+					</OnLeave>
+				</Scripts>
+				<NormalTexture name="$parentNormalTexture" file="Interface\ChatFrame\ChatFrameColorSwatch"/>
+			</Button>			
+		</Frames>
+	</Frame>
+	
+	<Frame name="DSCTColorPickerExTemplate" frameStrata="MEDIUM" inherits="DSCTColorPickerTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="160" y="22"/>
+		</Size>		
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="$parent_Text" inherits="GameFontNormal">
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT">
+							<Offset>
+								<AbsDimension x="30" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>			
+		</Layers>
+	</Frame>
+	
+	<Frame name="DSCTListTemplate" virtual="true" frameStrata="MEDIUM"  hidden="false">
+		<Size>
+			<AbsDimension x="140" y="50"/>
+		</Size>		
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="$parent_TileText" inherits="GameFontNormal">
+					<Anchors>
+						<Anchor point="TOP" relativeTo="$parent" relativePoint="TOP">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parent_Text" inherits="GameFontNormal">
+					<Color r="1.0" g="1.0" b="1.0"/>
+					<Anchors>
+						<Anchor point="TOP" relativeTo="$parent_TileText" relativePoint="BOTTOM">
+							<Offset>
+								<AbsDimension x="0" y="-5" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>			
+		</Layers>
+		<Scripts>
+			<OnEnter>
+				if ( this.tooltipText ) then
+					GameTooltip_AddNewbieTip(this.tooltipText, 1.0, 1.0, 1.0);
+				end
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
+		</Scripts>
+		<Frames>
+			<Button name="$parent_P">
+				<Size>
+					<AbsDimension x="20" y="20"/>
+				</Size>
+				<Anchors>
+					<Anchor point="CENTER" relativeTo="$parent_Text" relativePoint="CENTER">
+						<Offset>
+							<AbsDimension x="-55" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						DSCT_ButtonToggle(this:GetParent():GetName(),-1);
+					</OnClick>
+				</Scripts>
+				<NormalTexture file="Interface\Buttons\UI-SpellbookIcon-PrevPage-Up"/>
+				<PushedTexture file="Interface\Buttons\UI-SpellbookIcon-PrevPage-Down"/>
+				<HighlightTexture file="Interface\Buttons\GlowStar" alphaMode="ADD"/>
+			</Button>
+			<Button name="$parent_N">
+				<Size>
+					<AbsDimension x="20" y="20"/>
+				</Size>
+				<Anchors>
+					<Anchor point="CENTER" relativeTo="$parent_Text" relativePoint="CENTER">
+						<Offset>
+							<AbsDimension x="55" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						DSCT_ButtonToggle(this:GetParent():GetName(),1);
+					</OnClick>
+				</Scripts>
+				<NormalTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Up"/>
+				<PushedTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Down"/>
+				<HighlightTexture file="Interface\Buttons\GlowStar" alphaMode="ADD"/>
+			</Button>
+		</Frames>
+	</Frame>		
+		
+	<!-- EVENT TEMPLATE -->
+	<Frame name="DSCTEventOptionTemplate" inherits="DSCTColorPickerTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="160" y="22"/>
+		</Size>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString name="$parent_Text" inherits="GameFontNormal">
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="55" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</FontString>				
+			</Layer>			
+		</Layers>
+		<Frames>
+			<Button name="$parent_Button" inherits="GameMenuButtonTemplate" text="A">
+				<Size>
+					<AbsDimension x="22" y="22"/>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT" relativeTo="$parent_ColorSwatch" relativePoint="RIGHT">
+						<Offset>
+							<AbsDimension x="5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						this.Func(this:GetName());						
+					</OnClick>
+					<OnEnter>
+						GameTooltip_AddNewbieTip(this.tooltipText, 1.0, 1.0, 1.0);
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+			</Button>
+		</Frames>		
+	</Frame>		
+	
+	<!-- MAIN OPTION FRAME -->
+	<Frame name="DSCTOptions" toplevel="false" frameStrata="LOW" movable="true" enableMouse="true" hidden="true" parent="UIParent">
+		<Size>
+			<AbsDimension x="550" y="435"/>
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER" />
+		</Anchors>
+		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border"
+			tile="true">
+			<BackgroundInsets>
+				<AbsInset left="11" right="12" top="12" bottom="11" />	
+				<Size>
+					<AbsDimension x="128" y="17" />
+				</Size>
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="32" />
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="32" />
+			</EdgeSize>
+		</Backdrop>
+		
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture name="DSCTFrameTitle" file="Interface\DialogFrame\UI-DialogBox-Header">
+					<Size>
+						<AbsDimension x="360" y="64" />
+					</Size>
+					<Anchors>
+						<Anchor point="TOP">
+							<Offset>
+								<AbsDimension x="0" y="12" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString inherits="GameFontNormal" text="DSCT_MAIN_OPTION">
+					<Anchors>
+						<Anchor point="TOP" relativeTo="DSCTOptions">
+							<Offset>
+								<AbsDimension x="0" y="-3" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+			
+		</Layers>
+		
+		<Frames>
+			<Frame name="DSCTEvent1" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent2" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent3" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent4" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent5" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent6" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent7" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent8" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent9" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent10" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent11" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent12" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent13" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent14" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent15" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent16" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent17" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent18" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent19" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent20" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent21" inherits="DSCTEventOptionTemplate"/>
+			<Frame name="DSCTEvent22" inherits="DSCTEventOptionTemplate"/>
+			
+			<CheckButton name="DSCTCheck1" inherits="DSCTCheckTemplate"/>
+			<CheckButton name="DSCTCheck2" inherits="DSCTCheckTemplate"/>
+			<CheckButton name="DSCTCheck3" inherits="DSCTCheckTemplate"/>
+			<CheckButton name="DSCTCheck4" inherits="DSCTCheckTemplate"/>
+			<CheckButton name="DSCTCheck5" inherits="DSCTCheckTemplate"/>
+			<CheckButton name="DSCTCheck6" inherits="DSCTCheckTemplate"/>
+			<CheckButton name="DSCTCheck7" inherits="DSCTCheckTemplate"/>
+			<CheckButton name="DSCTCheck8" inherits="DSCTCheckTemplate"/>
+			
+			<Slider name="DSCTSlider1" inherits="DSCTSliderTemplate"/>
+			<Slider name="DSCTSlider2" inherits="DSCTSliderTemplate"/>
+			<Slider name="DSCTSlider3" inherits="DSCTSliderTemplate"/>
+			<Slider name="DSCTSlider4" inherits="DSCTSliderTemplate"/>
+			<Slider name="DSCTSlider5" inherits="DSCTSliderTemplate"/>
+			<Slider name="DSCTSlider6" inherits="DSCTSliderTemplate"/>
+			<Slider name="DSCTSlider7" inherits="DSCTSliderTemplate"/>
+			<Slider name="DSCTSlider8" inherits="DSCTSliderTemplate"/>
+			<Slider name="DSCTSlider9" inherits="DSCTSliderTemplate"/>
+			<Slider name="DSCTSlider10" inherits="DSCTSliderTemplate"/>
+			
+			<Frame name="DSCTColorPickerEx1" inherits="DSCTColorPickerExTemplate"/>
+			<Frame name="DSCTColorPickerEx2" inherits="DSCTColorPickerExTemplate"/>
+			
+			<Frame name="DSCTListFrame1" inherits="DSCTListTemplate"/>
+			<Frame name="DSCTListFrame2" inherits="DSCTListTemplate"/>
+			<Frame name="DSCTListFrame3" inherits="DSCTListTemplate"/>
+			<Frame name="DSCTListFrame4" inherits="DSCTListTemplate"/>
+			<Frame name="DSCTListFrame5" inherits="DSCTListTemplate"/>
+			
+			<Frame name="DSCTOptions_BG1" frameStrata="LOW" inherits="OptionFrameBoxTemplate">						
+				<Scripts>
+					<OnLoad>
+						this:SetBackdropBorderColor(0.4, 0.4, 0.4);
+						this:SetBackdropColor(0.15, 0.15, 0.15);
+					</OnLoad>
+				</Scripts>
+			</Frame>
+			<Frame name="DSCTOptions_BG2" frameStrata="LOW" inherits="OptionFrameBoxTemplate">						
+				<Scripts>
+					<OnLoad>
+						this:SetBackdropBorderColor(0.4, 0.4, 0.4);
+						this:SetBackdropColor(0.15, 0.15, 0.15);
+					</OnLoad>
+				</Scripts>
+			</Frame>
+			<Frame name="DSCTOptions_BG3" frameStrata="LOW" inherits="OptionFrameBoxTemplate">						
+				<Scripts>
+					<OnLoad>
+						this:SetBackdropBorderColor(0.4, 0.4, 0.4);
+						this:SetBackdropColor(0.15, 0.15, 0.15);
+					</OnLoad>
+				</Scripts>
+			</Frame>
+			<Frame name="DSCTOptions_BG4" frameStrata="LOW" inherits="OptionFrameBoxTemplate">						
+				<Scripts>
+					<OnLoad>
+						this:SetBackdropBorderColor(0.4, 0.4, 0.4);
+						this:SetBackdropColor(0.15, 0.15, 0.15);
+					</OnLoad>
+				</Scripts>
+			</Frame>
+			<Frame name="DSCTOptions_Title">
+				<Size>
+					<AbsDimension x="140" y="20"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="275" y="-30"/>
+						</Offset>
+					</Anchor>
+				</Anchors>			
+				<Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+					<EdgeSize>
+						<AbsValue val="8"/>
+					</EdgeSize>
+					<TileSize>
+						<AbsValue val="8"/>
+					</TileSize>
+					<BackgroundInsets>
+						<AbsInset left="2" right="2" top="2" bottom="2"/>
+					</BackgroundInsets>
+				</Backdrop>
+				<Layers>
+					<Layer>
+						<FontString name="DSCTOptions_Title_Text" inherits="GameFontHighlight" text="DSCT_EVENT_OPTION">
+							<Anchors>
+								<Anchor point="CENTER">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnLoad>
+						this:SetBackdropBorderColor(0.4, 0.4, 0.4);
+						this:SetBackdropColor(0.15, 0.15, 0.15);
+					</OnLoad>
+				</Scripts>
+			</Frame>
+			
+			<Button name="DSCTOptionsShowEvent" inherits="GameMenuButtonTemplate" text="DSCT_EVENT_OPTION">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="TOPLEFT" relitiveTo="DSCTOptions">
+						<Offset>
+							<AbsDimension x="20" y="-50" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						DSCTOptions_Title_Text:SetText(DSCT_EVENT_OPTION);
+						DSCT_HideAllBG();
+						DSCT_ShowBG(1,180,-50,340,360);
+						DSCTOptionsFrame_Clear();
+						DSCTOptionsFrame_Load(DSCT_OptionCfg_Event);						
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="DSCTOptionsShowWarning" inherits="GameMenuButtonTemplate" text="DSCT_WARNING_OPTION">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="TOPLEFT" relitiveTo="DSCTOptions">
+						<Offset>
+							<AbsDimension x="20" y="-80" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						DSCTOptions_Title_Text:SetText(DSCT_WARNING_OPTION);
+						DSCT_HideAllBG();
+						DSCT_ShowBG(1,180,-50,340,200);
+						DSCTOptionsFrame_Clear();
+						DSCTOptionsFrame_Load(DSCT_OptionCfg_Warning);
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="DSCTOptionsShowMisc" inherits="GameMenuButtonTemplate" text="DSCT_MISC_OPTION">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="TOPLEFT" relitiveTo="DSCTOptions">
+						<Offset>
+							<AbsDimension x="20" y="-110" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						DSCTOptions_Title_Text:SetText(DSCT_MISC_OPTION);
+						DSCT_HideAllBG();
+						DSCT_ShowBG(1,180,-50,160,200);
+						DSCTOptionsFrame_Clear();
+						DSCTOptionsFrame_Load(DSCT_OptionCfg_Misc);
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="DSCTOptionsShowText" inherits="GameMenuButtonTemplate" text="DSCT_TEXT_OPTION">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="TOPLEFT" relitiveTo="DSCTOptions">
+						<Offset>
+							<AbsDimension x="20" y="-140" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						DSCTOptions_Title_Text:SetText(DSCT_TEXT_OPTION);
+						DSCT_HideAllBG();
+						DSCT_ShowBG(1,180,-50,160,170);
+						DSCT_ShowBG(2,180,-230,160,170);
+						DSCT_ShowBG(3,360,-50,160,170);
+						DSCT_ShowBG(4,360,-230,160,170);
+						DSCTOptionsFrame_Clear();
+						DSCTOptionsFrame_Load(DSCT_OptionCfg_Text);
+						DSCTOptionsFrame_Load(DSCTAniModeParamsSliders[DSCT_Get("ANIMODE")]);
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="DSCTOptionsShowMSGText" inherits="GameMenuButtonTemplate" text="DSCT_MSGTEXT_OPTION">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="TOPLEFT" relitiveTo="DSCTOptions">
+						<Offset>
+							<AbsDimension x="20" y="-170" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						DSCTOptions_Title_Text:SetText(DSCT_MSGTEXT_OPTION);
+						DSCT_HideAllBG();
+						DSCT_ShowBG(1,180,-50,160,170);
+						DSCT_ShowBG(2,180,-230,160,170);
+						DSCTOptionsFrame_Clear();
+						DSCTOptionsFrame_Load(DSCT_OptionCfg_MSGText);	
+					</OnClick>
+				</Scripts>
+			</Button>			
+
+			<Button name="DSCTOptionsLoadCustom" inherits="GameMenuButtonTemplate" text="DSCT_BUTTON_LOADCUSTOM_LABEL">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="TOPLEFT" relitiveTo="DSCTOptions">
+						<Offset>
+							<AbsDimension x="20" y="-325" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						DSCT_LoadCustom();
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="DSCTOptionsSaveCustom" inherits="GameMenuButtonTemplate" text="DSCT_BUTTON_SAVECUSTOM_LABEL">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="TOPLEFT" relitiveTo="DSCTOptions">
+						<Offset>
+							<AbsDimension x="20" y="-355" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						DSCT_SaveCustom();
+					</OnClick>
+				</Scripts>
+			</Button>			
+			
+			<Button name="DSCTOptionsSave" inherits="GameMenuButtonTemplate" text="CLOSE">
+				<Anchors>
+					<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT" relitiveTo="DSCTOptions">
+						<Offset>
+							<AbsDimension x="20" y="30" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						PlaySound("gsTitleOptionOK");
+						if ( ColorPickerFrame:IsVisible() ) then
+							ColorPickerFrame:Hide();
+						end						
+						DSCT_hideMenu();
+					</OnClick>
+				</Scripts>
+			</Button>
+			
+			<Button name="DSCTOptionsReset" inherits="OptionsButtonTemplate" text="DSCT_BUTTON_RESET_LABEL">
+				<Anchors>
+					<Anchor point="TOPRIGHT">
+						<Offset>
+							<AbsDimension x="-30" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						PlaySound("igMainMenuOptionCheckBoxOn");						
+						DSCT_Reset();
+						DSCT_HideAllBG();
+						DSCT_ShowBG(1,180,-50,340,360);
+					</OnClick>
+					<OnEnter>
+						GameTooltip_AddNewbieTip(DSCT_BUTTON_RESET_TIP, 1.0, 1.0, 1.0);
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+			</Button>			
+			
+			<Button name="DSCT_PreMessBox" parent="UIParent" frameStrata="HIGH" movable="true" hidden="true" virtual="true">
+				<Size>
+					<AbsDimension x="140" y="20"/>
+				</Size>
+				<Anchors>
+					<Anchor point="CENTER" />
+				</Anchors>
+				<Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+					<EdgeSize>
+						<AbsValue val="8"/>
+					</EdgeSize>
+					<TileSize>
+						<AbsValue val="8"/>
+					</TileSize>
+					<BackgroundInsets>
+						<AbsInset left="2" right="2" top="2" bottom="2"/>
+					</BackgroundInsets>
+				</Backdrop>
+				<Layers>
+					<Layer level="OVERLAY">			
+						<FontString name="DSCT_PreMessBox_Title" inherits="GameFontNormal" text="DSCT_PREVIEW_TEXT1">	
+							<Anchors>
+								<Anchor point="CENTER" relitiveTo="$parent"/>							
+							</Anchors>							
+							<FontHeight>
+								<AbsValue val="14"/>
+							</FontHeight>
+							<Color r="1" g="1" b="0"/>
+						</FontString>
+					</Layer>					
+				</Layers>
+				<Scripts>
+					<OnMouseUp>
+						DSCT_PreMessMouseUp();
+					</OnMouseUp>
+					<OnMouseDown>
+						DSCT_PreMessMouseDown(arg1);
+					</OnMouseDown>								
+				</Scripts>
+			</Button>
+			
+			<Button name="DSCT_PreAniBox" parent="UIParent" frameStrata="HIGH" movable="true" hidden="true" virtual="true">
+				<Size>
+					<AbsDimension x="140" y="20"/>
+				</Size>
+				<Anchors>
+					<Anchor point="CENTER" />
+				</Anchors>
+				<Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+					<EdgeSize>
+						<AbsValue val="8"/>
+					</EdgeSize>
+					<TileSize>
+						<AbsValue val="8"/>
+					</TileSize>
+					<BackgroundInsets>
+						<AbsInset left="2" right="2" top="2" bottom="2"/>
+					</BackgroundInsets>
+				</Backdrop>
+				<Layers>
+					<Layer level="OVERLAY">			
+						<FontString name="DSCT_PreMessBox_Title" inherits="GameFontNormal" text="DSCT_PREVIEW_TEXT2">	
+							<Anchors>
+								<Anchor point="CENTER" relitiveTo="$parent"/>							
+							</Anchors>							
+							<FontHeight>
+								<AbsValue val="14"/>
+							</FontHeight>
+							<Color r="1" g="1" b="0"/>
+						</FontString>
+					</Layer>					
+				</Layers>
+				<Scripts>
+					<OnMouseUp>
+						DSCT_PreAniMouseUp();
+					</OnMouseUp>
+					<OnMouseDown>
+						DSCT_PreAniMouseDown(arg1);
+					</OnMouseDown>								
+				</Scripts>
+			</Button>
+		</Frames>
+
+		<Scripts>
+			<OnMouseUp>
+				DSCT_MouseUp();
+			</OnMouseUp>
+			<OnMouseDown>
+				DSCT_MouseDown(arg1);
+			</OnMouseDown>
+			<OnShow>
+				DSCTOptionsFrame_OnShow();
+			</OnShow>
+			<OnHide>
+				DSCT_hideMenu();
+			</OnHide>
+		</Scripts>
+	</Frame>
+</Ui>

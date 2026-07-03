@@ -1,0 +1,23 @@
+{
+    "Lua.diagnostics.globals": [
+        "UnitPopupMenus",
+        "SlashCmdList",
+        "MAX_PARTY_MEMBERS",
+        "MAX_RAID_MEMBERS",
+        "NUM_RAID_GROUPS",
+        "SetRaidTargetIconTexture",
+        "MEMBERS_PER_RAID_GROUP",
+        "UIDropDownMenu_AddButton",
+        "UISpecialFrames",
+        "GameFontHighlightSmall",
+        "ACCEPT",
+        "DEFAULT_CHAT_FRAME",
+        "UIDROPDOWNMENU_MENU_LEVEL",
+        "TOOLTIP_UPDATE_TIME",
+        "PlayerFrame",
+        "TargetFrame",
+        "NORMAL_FONT_COLOR_CODE",
+        "NOT_BOUND",
+        "FONT_COLOR_CODE_CLOSE"
+    ]
+}

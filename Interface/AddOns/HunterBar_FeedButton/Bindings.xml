@@ -1,0 +1,17 @@
+<Bindings>
+	<Binding name="FEEDPETBUTTON1" description="FEEDPETBUTTON1" header="FEEDPETBUTTON">
+		FeedButton_ExecuteKeyPress();
+	</Binding>
+	<Binding name="FEEDPETBUTTON2" description="FEEDPETBUTTON2">
+		FeedButton_ExecuteKeyPress(true);
+	</Binding>
+	<Binding name="TOGGLEAUTOFEED">
+		FeedButton_ToggleAutoFeed();
+	</Binding>
+	<Binding name="TOGGLEAUTOFEEDLEVEL">
+		FeedButton_ToggleAutoFeedLevel();
+	</Binding>
+	<Binding name="SHOWALLBUFF">
+		FeedButton_ShowAllBuff();
+	</Binding>
+</Bindings>

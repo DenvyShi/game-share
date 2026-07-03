@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFEnemy Damage Taken|r
+## Notes: Adds the modules for the edt evaluation.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF敌人受到伤害模块
+## Notes-zhCN:|CFFFF8080DPSMate_EDT|R|NDPSMate增加敌人受到伤害模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_EDT.lua
+DPSMate_Details_EDT.lua
+DPSMate_Details_EDT.xml
+DPSMate_Details_EDTTotal.lua
+DPSMate_Details_EDTTotal.xml

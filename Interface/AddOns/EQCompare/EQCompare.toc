@@ -1,0 +1,18 @@
+## Interface: 11200
+## Author: hshh
+## Title: EQCompare |cff7fff7f -Ace2-|r
+## Notes: Compare equipped inventory items against items in chatframe hyperlink and bags/bank.
+## Title-zhCN:|CFFDD66DD[界面]|R装备比较
+## Notes-zhCN:|CFFDD66DDEQCompare|R|N自动与玩家身上的装备进行比较。
+## X-Repple: 界面
+## Version: 1.4
+## X-eMail: hshh@hshh.org
+## X-Website: http://www.hshh.org/
+## OptionalDeps: !Libs
+## Dependencies: !Libs
+## SavedVariables: EQCompareDB
+
+localization.lua
+localization.cn.lua
+EQCompare.lua
+EQCompare.xml

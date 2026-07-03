@@ -1,0 +1,12 @@
+## Interface: 11200
+## Title: |CFFEE7600[仇恨工具]|twt 魔改免进战斗版
+## Author: Xerron/ 缺德不呀 修改
+## Version: 9.9999999999
+## Notes: Turtle WoW's own Threatmeter !
+## SavedVariablesPerCharacter: TWT_CONFIG, TWTtargetGUIDCache
+TWThreat.xml
+
+## X-PluginId: 105
+## X-PublishTime: 2026-06-16 12:15:38
+## X-Version: 20260616001
+## X-OverrideMode: 1

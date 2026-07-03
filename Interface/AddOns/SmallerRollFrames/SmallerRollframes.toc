@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title: SmallerRollframes
+## Notes: Reduces the size of your roll frames
+## Title-zhCN:|CFF33AAFF[辅助]|RROLL点美化
+## Notes-zhCN:|CFF33AAFFSmallerRollframes|R|NROLL点美化，Ctrl+左键穿戴预览，Shift+左键发送到聊天框。
+## X-Repple: 辅助
+## Author: DWG, 1.12 modify by 狗血编剧男
+SmallerRollframes.xml

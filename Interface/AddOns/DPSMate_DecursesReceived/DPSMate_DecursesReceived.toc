@@ -1,0 +1,12 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFDecurses received|r
+## Notes: Adds the modules for decurses received evaluation.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF解除诅咒模块[接受]
+## Notes-zhCN:|CFFFF8080DPSMate_DecursesReceived|R|NDPSMate增加受到解除诅咒模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate, DPSMate_Decurses
+
+DPSMate_DecursesReceived.lua
+DPSMate_Details_DecursesReceived.lua
+DPSMate_Details_DecursesReceived.xml

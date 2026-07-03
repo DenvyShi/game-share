@@ -1,0 +1,36 @@
+﻿## Interface: 11200
+## Title: |cff7fff7f银龙!!!|r
+## Notes: Remember where rares were updated by Miv
+FishEase
+## Title-zhCN:|CFF33AAFF[辅助]|R精英侦测
+## Notes-zhCN:|CFF33AAFFSilverDragon|R|N稀有怪，精英怪提醒。|N命令：/sd|N命令：/silverdragon
+## X-Repple: 辅助
+## Version: 2.0
+## Author: Kemayo / Updated by Miv
+## X-Category: Interface Enhancements
+## X-Donate: PayPal:kemayo AT gmail DOT com
+## OptionalDependencies: Ace2, FuBarPlugin-2.0, TabletLib, DewdropLib, FuBar, Cartographer
+## SavedVariables: SilverDragonDB
+## LoadOnDemand: 0
+
+## X-Embeds: Ace2, DewdropLib, FuBarPlugin-2.0, TabletLib
+Libs\AceLibrary\AceLibrary.lua
+Libs\AceOO-2.0\AceOO-2.0.lua
+Libs\AceConsole-2.0\AceConsole-2.0.lua
+Libs\AceEvent-2.0\AceEvent-2.0.lua
+Libs\AceHook-2.1\AceHook-2.1.lua
+Libs\AceAddon-2.0\AceAddon-2.0.lua
+Libs\AceDB-2.0\AceDB-2.0.lua
+Libs\AceLocale-2.2\AceLocale-2.2.lua
+Libs\Dewdrop-2.0\Dewdrop-2.0.lua
+Libs\Tablet-2.0\Tablet-2.0.lua
+Libs\FuBarPlugin-2.0\FuBarPlugin-2.0.lua
+## LIBS END
+
+Locale.enUS.lua
+
+
+Core.lua
+Defaults.lua
+
+## X-Turtle-Shell-Version: 1693812864

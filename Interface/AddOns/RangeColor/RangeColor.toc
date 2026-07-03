@@ -1,0 +1,13 @@
+## Interface: 11200
+## Title: 动作距离颜色<60addons增强版>
+## Notes: Change the icon color when out of range, no mana, etc. Use << /rc >> or << /rangecolor >> for the options menu.
+## Title-zhCN:|CFFDD66DD[界面]|R动作距离颜色
+## Notes-zhCN:|CFFDD66DDRangeColor|R|N在超出范围、没有法力值等情况下更改图标颜色。|N命令：/rc|N命令：/rangecolor
+## X-Repple: 界面
+## Author: Edswor
+## OptionalDeps: myAddOns
+## Dependencies:
+## SavedVariablesPerCharacter: RangeColor_Save2
+RangeColor.xml
+RangeColorOptions.xml
+

@@ -1,0 +1,10 @@
+## Interface: 11200
+## Title: S_AutoDruidShape
+## Notes: Auto Druid shape.
+## Title-zhCN:|CFFFFFF00[职业]|R|CFFFF7D0A德鲁伊|R德鲁伊变形助手
+## Notes-zhCN:|CFFFFFF00S_AutoDruidShape|R|N德鲁伊根据技能自动变形。
+## DefaultState: disabled
+## Author: 狗血编剧男
+## OptionalDeps: !Libs
+## Dependencies: !Libs
+S_AutoDruidShape.lua

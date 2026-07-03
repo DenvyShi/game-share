@@ -1,0 +1,10 @@
+## Interface: 11200
+## Title: |cff33ffcc团队工具|cffffffffaDF护甲抗性监控
+## Author: Atreyyo, Sunelegy
+## Version: 3.1
+## Notes: 直观显示目标的护甲以及破甲相关Debuff，选None即可不发通告信息。|n输入/adf options调整设置。按住Shift可以移动窗口位置。 |cFFFFFF00|n 乌龟服定制版 by Sunelegy
+## DefaultState: Enabled
+## LoadOnDemand: 0
+## SavedVariables: aDF_x, aDF_y, guiOptions, gui_Options, gui_chan, gui_Optionsxy
+
+aDF.lua

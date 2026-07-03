@@ -1,0 +1,15 @@
+## Interface: 11200
+## Title: S_CastSelf
+## Notes: Auto self cast when no target.
+## Title-zhCN:S_CastSelf 简单自我施法
+## Notes-zhCN:自动自我施法（不管有没有目标，允许通过Alt键来对自身强行施法）
+## Title-zhCN:|CFF33AAFF[辅助]|R简单自我施法
+## Notes-zhCN:|CFF33AAFFS_CastSelf|R|N自动自我施法（不管有没有目标，允许通过Alt键来对自身强行施法）。/N自动自我施法命令：/scastself
+## X-Repple: 辅助
+## Author: 1.12 modify by 狗血编剧男（凡人）
+## SavedVariablesPerCharacter: CS_SELF_ENABLED
+## OptionalDeps: !Libs
+## Dependencies: !Libs
+S_CastSelf.lua
+
+## X-Turtle-Shell-Version: 1693801334

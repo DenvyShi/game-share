@@ -1,0 +1,112 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
+    <Script file="En_XPRP.lua"/>
+<!-- General -->
+    <Frame name="EUF_XPRP_Genreal" parent="UIParent" hidden="true">
+        <Scripts>
+            <OnLoad>
+                EUF_XPRP_OnLoad()
+            </OnLoad>
+            <OnEvent>
+                EUF_XPRP_OnEvent(event)
+            </OnEvent>			
+        </Scripts>
+    </Frame>
+    <Frame name="XpRp" parent="PlayerFrame"  mouseover="true">
+        <Frames>
+           <StatusBar name="$parentBar" inherits="TextStatusBar">
+                <Size>
+                    <AbsDimension x="190" y="12"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="PlayerFrame" relativePoint="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="107" y="-65"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Frame>
+                        <Layers>
+                            <Layer level="OVERLAY">
+                                <Texture name="$parentBorder" file="Interface\AddOns\En_UnitFrames\media\En_XPRP">
+                                    <Size>
+                                        <AbsDimension x="146" y="33"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="TOPLEFT" relativeTo="PlayerFrame">
+                                            <Offset>
+                                                <AbsDimension x="78" y="-57"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                    <TexCoords left="0" right="0.5703125" top="0" bottom="1"/>
+                                </Texture>
+                                <Texture name="$parentBorderExt" file="Interface\AddOns\En_UnitFrames\media\En_XPRP">
+                                    <Size>
+                                        <AbsDimension x="17" y="32"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="TOPLEFT" relativeTo="PlayerFrame">
+                                            <Offset>
+                                                <AbsDimension x="224" y="-57"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+									<TexCoords left="0.848" right="0.919" top="-0.06" bottom="1"/>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                    </Frame>
+                </Frames>
+                <BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
+                <Scripts>
+                    <OnLoad>
+                        this:SetFrameLevel(PlayerFrameManaBar:GetFrameLevel())
+						this:SetWidth(PlayerFrameManaBar:GetWidth())
+						this:SetHeight(PlayerFrameManaBar:GetHeight())
+                    </OnLoad>				
+					<OnEnter>
+						EUF_XPRP_OnEnter()
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide()
+					</OnLeave>
+					<OnMouseUp>
+							PlayerFrame:Click()
+					</OnMouseUp>					
+                </Scripts>
+            </StatusBar>
+            <Frame>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <FontString name="$parentText" font="Fonts\FZLBJW.TTF" virtual="true">
+							<Anchors>
+								<Anchor point="CENTER" relativeTo="XpRpBar" relativePoint="CENTER">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<FontHeight>
+								<AbsValue val="14"/>
+							</FontHeight>
+							<Color r="1" g="1" b="0"/>
+							<Shadow>
+								<Offset>
+									<AbsDimension x="1" y="-1"/>
+								</Offset>
+								<Color r="0" g="0" b="0"/>
+							</Shadow>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnLoad>
+                        this:SetFrameLevel(this:GetFrameLevel() + 1)
+                    </OnLoad>
+                </Scripts>
+            </Frame>
+        </Frames>
+    </Frame>
+</Ui>

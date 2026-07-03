@@ -1,0 +1,10 @@
+## Interface: 11200
+## Title: S_WhoClass
+## Notes: Add buttons to the Who-Frame for easy configuration of a who class request
+## Title-zhCN:|CFF33AAFF[辅助]|R简单职业过滤查找
+## Notes-zhCN:|CFF33AAFFS_WhoClass|R|N在查找页增加职业过滤功能按钮。
+## X-Repple: 辅助
+## Version: 1.0
+## Author: 1.12 modify
+
+S_WhoClass.lua

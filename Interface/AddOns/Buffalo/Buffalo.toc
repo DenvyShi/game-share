@@ -1,0 +1,24 @@
+## Interface: 11200
+## Title:|cFF00FF00Buff/debuff增强显示和计时
+## Notes: 可任意移动Buff和DeBuff位置。|n/Buffalo 
+## Title-zhCN:|cFF00FF00Buff/debuff增强显示和计时
+## Notes-zhCN: 可任意移动Buff和DeBuff位置。|n/Buffalo 
+## X-Repple: 界面
+## Dependencies: !Libs
+## Author: Nimbal
+## OptionalDependencies: !Libs
+## X-Category: Buffs
+## X-Embeds: !Libs, DewdropLib, Abacus
+## X-Date: 10/18/2006
+## X-eMail: nimbal@audacia-gilde.de
+## SavedVariables: BuffaloDB
+Buffalo-zhCN.lua
+Buffalo.xml
+BuffaloOptions.lua
+BuffaloDefaults.lua
+Buffalo.lua
+
+## X-PluginId: 60
+## X-PublishTime: 2025-10-09 09:22:16
+## X-Version: 20251009001
+## X-OverrideMode: 1

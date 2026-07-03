@@ -1,0 +1,25 @@
+## Interface: 11200
+## Title-zhCN: |cff7fff7f 屏蔽插件加载信息|r
+## Notes: Finally! No more AddOn loading spam.
+## Title-zhCN:|CFFDD66DD[界面]|R插件屏蔽加载信息
+## Notes-zhCN:|CFFDD66DD!StopTheSpam|R|N屏蔽插件加载信息。
+## X-Repple: 界面
+## Author: Malreth of Silver Hand
+## Version: 2.00.11200
+## OptionalDeps: Ace2
+## X-Embeds: Ace2
+## X-Date: 11-07-2006
+## X-Email: malreth@iscomputeronfire.com
+## X-Website: http://malreth.wowinterface.com/
+## X-Category: Miscellaneous
+## X-Copyright: Copyright (c) 2006, Tyler Riti
+
+libs\AceLibrary\AceLibrary.lua
+libs\AceOO-2.0\AceOO-2.0.lua
+libs\AceEvent-2.0\AceEvent-2.0.lua
+libs\AceAddon-2.0\AceAddon-2.0.lua
+libs\AceHook-2.1\AceHook-2.1.lua
+libs\AceDebug-2.0\AceDebug-2.0.lua
+
+StopTheSpam.lua
+Ruleset.lua

@@ -1,0 +1,9 @@
+## Interface: 11200
+## Author: shirsig
+## Title: mouseover 鼠标悬停施法
+## Notes: Enables mouseover actions on unitframes
+## Title-zhCN:|CFFFFFF00[职业]|R|CFF2EFEF7全职业|R鼠标悬停施法
+## Notes-zhCN:|CFFFFFF00!mouseover|R|N在单位框架上启用鼠标悬停操作。
+## X-Repple: 职业
+mouseover.lua
+## Q-CAT-Version: 000100

@@ -1,0 +1,10 @@
+﻿## Interface: 11200
+## Title: Postal
+## Notes: Mailbox automation
+## Title-zhCN:|CFF33AAFF[辅助]|R群发邮件
+## Notes-zhCN:|CFF33AAFFPostal|R|N使你能够把多个物品一次性发送给同一个人,也能快捷接收所有邮件。
+## X-Repple: 辅助
+## Author: shirsig
+## SavedVariablesPerCharacter: Postal_To
+## SavedVariables: Postal_Characters
+Postal.xml

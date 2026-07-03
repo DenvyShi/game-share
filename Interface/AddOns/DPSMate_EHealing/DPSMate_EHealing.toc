@@ -1,0 +1,15 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFEffective healing|r
+## Notes: Adds the modules for the effective healing evaluation.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF有效治疗模块
+## Notes-zhCN:|CFFFF8080DPSMate_EHealing|R|NDPSMate增加有效治疗模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_EffectiveHealing.lua
+DPSMate_EffectiveHPS.lua
+DPSMate_Details_EHealing.lua
+DPSMate_Details_EHealing.xml
+DPSMate_Details_EHealingTotal.lua
+DPSMate_Details_EHealingTotal.xml

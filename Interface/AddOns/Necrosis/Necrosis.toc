@@ -1,0 +1,23 @@
+## Interface: 11200
+## Title: Necrosis
+## Notes: Gestion graphique des shards.
+## Notes-zhCN: 术士的命令面板和施法计时器
+## Title-zhCN:|CFFFFFF00[职业]|R|CFF9482C9术士|R综合球体技能助手
+## Notes-zhCN:|CFFFFFF00Necrosis|R|N术士经典的命令面板和施法计时器。
+## X-Repple: 职业
+## RequiredDeps: 
+## OptionalDeps: BonusScanner
+## Dependencies:
+## DefaultState:
+## DefaultState: Disabled
+## SavedVariables:
+## SavedVariablesPerCharacter: NecrosisConfig
+NecrosisGeneral.xml
+Necrosis.xml
+NecrosisTimer.xml
+NecrosisShardMenu.xml
+NecrosisMessageMenu.xml
+NecrosisButtonMenu.xml
+NecrosisTimerMenu.xml
+NecrosisGraphOptionMenu.xml
+## Q-CAT-Version: 100

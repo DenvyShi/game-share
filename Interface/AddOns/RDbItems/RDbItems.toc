@@ -1,0 +1,11 @@
+## Interface: 11200
+## Title:|CFF00FF00[|r|CFFDD66DD界面|r|CFF00FF00] 物品出售价格显示
+## Notes:在物品信息下方显示该物品出售给NPC的价格。
+## Title-zhCN:|CFF00FF00[|r|CFFDD66DD界面|r|CFF00FF00] 物品出售价格显示
+## Notes-zhCN:在物品信息下方显示该物品出售给NPC的价格。
+## OptionalDeps: RDbItemsEnchant
+## SavedVariables: RDbItemsCC, RDbItemsCfg
+## Author: Shagu
+## Version: 1.2
+
+RDbItems.xml

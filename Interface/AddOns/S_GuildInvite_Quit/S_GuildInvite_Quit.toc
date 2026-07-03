@@ -1,0 +1,10 @@
+## Interface: 11200
+## Title: S_GuildInvite_Quit
+## Notes: Invite sb. from you whofamelist.Quit your guild.
+## Title-zhCN:|CFF33AAFF[辅助]|R快捷公会邀请 退出公会
+## Notes-zhCN:|CFF33AAFFS_GuildInvite_Quit|R|N增加公会邀请按钮：邀请搜索到的全部玩家进入公会（需要公会邀请权限）。|N增加退出公会按钮：快捷退出公会。
+## X-Repple: 辅助
+## Author: 1.12 modify by 狗血编剧男
+## Version: 0.5
+S_GuildInvite.lua
+S_GuildQuit.lua

@@ -1,0 +1,16 @@
+## Interface: 11200
+## Title: HB - Feed Pet Button Mod
+## Notes: One click to feed the selected food to your pet, and autofeed when pet less than specified happiness level
+## Title-zhCN:|CFFFFFF00[职业]|R|CFFABD473猎人|R一键喂食按钮
+## Notes-zhCN:|CFFFFFF00HunterBar_FeedButton|R|N猎人宠物快速喂食按钮。
+## X-Repple: 职业
+## Author: Original version by Zuban, modified by Ragz
+## Versions: 1.0.1
+## Dependencies: 
+## OptionalDeps: Khaos
+## DefaultState: disabled
+## SavedVariables: FeedPetButton_Config
+ZubanLib.xml
+HunterBar_FeedButton.xml
+
+## X-Turtle-Shell-Version: 1693791938

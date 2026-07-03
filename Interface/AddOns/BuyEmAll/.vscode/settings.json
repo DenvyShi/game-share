@@ -1,0 +1,18 @@
+{
+    "Lua.diagnostics.globals": [
+        "StaticPopupDialogs",
+        "MoneyTypeInfo",
+        "MoneyFrame_SetType",
+        "MoneyFrame_Update",
+        "StaticPopup_Hide",
+        "MerchantFrame",
+        "DEFAULT_CHAT_FRAME",
+        "YES",
+        "NO",
+        "StaticPopup_Show",
+        "MerchantItemButton_OnClick",
+        "GREEN_FONT_COLOR_CODE",
+        "HIGHLIGHT_FONT_COLOR",
+        "GREEN_FONT_COLOR"
+    ]
+}

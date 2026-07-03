@@ -1,0 +1,12 @@
+## Interface: 11200
+## Title: Wide Quest Log
+## Notes: Doubles the Width of the Quest Log
+## Title-zhCN:S_QuestLogFrame 宽任务界面显示
+## Notes-zhCN:宽任务界面显示（带任务等级显示）
+## Title-zhCN: |CFF33AAFF[辅助]|R宽任务界面显示
+## Notes-zhCN:|CFF33AAFFS_WideQuestLog|R宽任务界面显示（带任务等级显示）。
+## X-Repple: 辅助
+## Author: Bloodline, 1.12 modify by 狗血编剧男
+## OptionalDeps: !Libs
+## Dependencies: !Libs
+S_QuestLogFrame.lua

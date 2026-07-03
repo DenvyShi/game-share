@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title: 力反馈盾牌管理 |cFFFFFFFFv2.00|r
+## Notes: 自动管理和切换力反馈盾牌
+## Author: 安娜希尔
+## Version: 2.00
+## SavedVariables: FRD_Settings
+
+ForceReactiveDisk.lua

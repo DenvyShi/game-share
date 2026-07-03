@@ -1,0 +1,5 @@
+## Interface: 11200
+## Title-zhCN: |CFFFFFF00[职业]|R|CFFFFF569盗贼|R盗贼连击点
+## Notes-zhCN: |CFFFFFF00ComboBarFrame|R|N盗贼连击点。
+## Author: Reaper (Nuga - Zendedar)
+ComboBarFrame.xml

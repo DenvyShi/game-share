@@ -1,0 +1,17 @@
+## Interface: 11200
+## Title: ChatLog
+## Notes: Logs and display the chat.
+## Title-zhCN:|CFF33AAFF[辅助]|R聊天记录查看及保存
+## Notes-zhCN:|CFF33AAFFChatLog|R|N聊天记录查看及保存。
+## X-Repple: 辅助
+## Author: pb_ee1
+## Version: 1.2.6
+## SavedVariables: CHAT_LOG_CHAT_ENABLED, CHAT_LOG_COMBATCHAT_ENABLED, CHAT_LOG_ENABLED_DEFAULT
+## SavedVariablesPerCharacter: CHAT_LOG_ALPHA, ChatLog_Logs
+ChatLog.Conf.lua
+localization.en.lua
+localization.fr.lua
+localization.de.lua
+localization.cn.lua
+ChatLog.lua
+ChatLog.xml

@@ -1,0 +1,72 @@
+<!-- Scrolling Combat Text V0.1,FZLBJW.TTF,FZJZJW.TTF,LBJW.TTF ,FZXHLJW.TTF-->
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   xsi:schemaLocation="http://www.blizzard.com/wow/ui/"> 
+	<Script file="localization.lua"/>	
+	<Script file="sct_event_config.lua"/>	
+	<Script file="sct.lua"/>
+
+	<Frame name="DSCT_HEALTHTEXT" toplevel="true" enableMouse="false" parent="UIParent" frameStrata="HIGH">
+		<Size>
+			<AbsDimension x="0" y="0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER">
+				<Offset>
+					<AbsDimension x="0" y="60"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString name="DSCTaniData1" inherits="GameFontNormal" hidden="true"/>			
+				<FontString name="DSCTaniData2" inherits="GameFontNormal" hidden="true"/>
+				<FontString name="DSCTaniData3" inherits="GameFontNormal" hidden="true"/>
+				<FontString name="DSCTaniData4" inherits="GameFontNormal" hidden="true"/>
+				<FontString name="DSCTaniData5" inherits="GameFontNormal" hidden="true"/>
+				<FontString name="DSCTaniData6" inherits="GameFontNormal" hidden="true"/>
+				<FontString name="DSCTaniData7" inherits="GameFontNormal" hidden="true"/>
+				<FontString name="DSCTaniData8" inherits="GameFontNormal" hidden="true"/>
+				<FontString name="DSCTaniData9" inherits="GameFontNormal" hidden="true"/>
+				<FontString name="DSCTaniData10" inherits="GameFontNormal" hidden="true"/>
+				
+				<FontString name="DSCTaniData1_LEFT" inherits="GameFontNormal"/>			
+				<FontString name="DSCTaniData2_LEFT" inherits="GameFontNormal"/>
+				<FontString name="DSCTaniData3_LEFT" inherits="GameFontNormal"/>
+				<FontString name="DSCTaniData4_LEFT" inherits="GameFontNormal"/>
+				<FontString name="DSCTaniData5_LEFT" inherits="GameFontNormal"/>
+				<FontString name="DSCTaniData6_LEFT" inherits="GameFontNormal"/>
+				<FontString name="DSCTaniData7_LEFT" inherits="GameFontNormal"/>
+				<FontString name="DSCTaniData8_LEFT" inherits="GameFontNormal"/>
+				<FontString name="DSCTaniData9_LEFT" inherits="GameFontNormal"/>
+				<FontString name="DSCTaniData10_LEFT" inherits="GameFontNormal"/>
+				
+				<FontString name="DSCTaniData1_RIGHT" inherits="GameFontNormal"/>			
+				<FontString name="DSCTaniData2_RIGHT" inherits="GameFontNormal"/>
+				<FontString name="DSCTaniData3_RIGHT" inherits="GameFontNormal"/>
+				<FontString name="DSCTaniData4_RIGHT" inherits="GameFontNormal"/>
+				<FontString name="DSCTaniData5_RIGHT" inherits="GameFontNormal"/>
+				<FontString name="DSCTaniData6_RIGHT" inherits="GameFontNormal"/>
+				<FontString name="DSCTaniData7_RIGHT" inherits="GameFontNormal"/>
+				<FontString name="DSCTaniData8_RIGHT" inherits="GameFontNormal"/>
+				<FontString name="DSCTaniData9_RIGHT" inherits="GameFontNormal"/>
+				<FontString name="DSCTaniData10_RIGHT" inherits="GameFontNormal"/>
+				
+				<FontString name="DSCTcusMessData1" inherits="GameFontNormal"/>
+				<FontString name="DSCTcusMessData2" inherits="GameFontNormal"/>					
+				<FontString name="DSCTcusMessData3" inherits="GameFontNormal"/>
+				
+			</Layer>		
+		</Layers>
+		
+		<Scripts>
+	      	<OnLoad>
+				DSCT_OnLoad();
+	      	</OnLoad>
+	      	<OnEvent>
+	        	DSCT_OnEvent(event, arg1, arg2, arg3);
+	      	</OnEvent>	     
+			<OnUpdate>
+	        	DSCT_TextUpdate(arg1);
+	      	</OnUpdate>			
+		</Scripts>
+	</Frame>	
+</Ui>

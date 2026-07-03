@@ -1,0 +1,10 @@
+## Interface: 11200
+## Title: PicoPoisons
+## Notes: Displays remaining charges of poisons on the respective buff symbols
+## Title-zhCN:|CFFFFFF00[职业]|R|CFFFFF569盗贼|R剩余毒药次数显示
+## Notes-zhCN:|CFFFFFF00PicoPoisons|R|N在武器BUFF栏显示剩余毒药次数。
+## X-Repple: 职业
+## Version: 1.00
+## Author: jsb
+## DefaultState: disabled
+PicoPoisons.lua

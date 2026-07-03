@@ -1,0 +1,58 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate
+## Notes: DPSMate is an advanced combat analyzation tool, providing helpful graphs and statistics to evaluate the fight.
+## Notes-deDE: DPSMate ist ein Analysewerkzeug, das hilfreiche Graphen und Statistiken bereitstellt, um den Kampf zu evaluieren.
+## Title-zhCN:|CFFEE7600[DPS统计]|RDPSMate
+## Notes-zhCN:|CFFFF8080DPSMate|R|NDPSMate是一个先进的战斗分析工具，提供有用的图表和统计数据来评估战斗。主程序包含输出和治疗统计，其他功能需安装扩展模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy, 汉故征西将军
+## Version: 1.3
+## SavedVariables: DPSMateSettings
+## SavedVariablesPerCharacter: DPSMateUser, DPSMateAbility, DPSMateDamageDone, DPSMateEDT, DPSMateEDD, DPSMateDamageTaken, DPSMateDispels, DPSMateInterrupts, DPSMateDeaths, DPSMateEHealing, DPSMateTHealing, DPSMateHealingTaken, DPSMateEHealingTaken, DPSMateOverhealing, DPSMateOverhealingTaken, DPSMateAbsorbs, DPSMateThreat, DPSMateAurasGained, DPSMateCombatTime, DPSMateHistory, DPSMateFails, DPSMateCCBreaker, DPSMATERESET
+
+libs\AceLibrary\AceLibrary.lua
+libs\Dewdrop-2.0\Dewdrop-2.0.lua
+libs\GraphLib\Graph-1.0\Graph-1.0.lua
+enUS\Babble-Spell-2.3.lua
+enUS\Babble-Boss-2.3.lua
+
+DPSMate.lua
+
+enUS\enUS.lua
+
+DPSMate_Parser.lua
+enUS\DPSMate_ParserENUS.lua
+DPSMate_Options.lua
+DPSMate_Sync.lua
+DPSMate_DataBuilder.lua
+
+Damage\DPSMate_DPS.lua
+Damage\DPSMate_Damage.lua
+
+Damage\DPSMate_Details_Damage.lua
+Damage\DPSMate_Details_Damage.xml
+Damage\DPSMate_Details_DamageTotal.lua
+Damage\DPSMate_Details_DamageTotal.xml
+
+DPSMate_Frame.xml
+DPSMate_Options.xml
+Bindings.xml
+
+DPSMate_!zhCN\Babble-Spell-2.3_zhCN.lua
+DPSMate_!zhCN\Babble-Boss-2.3_zhCN.lua
+DPSMate_!zhCN\zhCN.lua
+DPSMate_!zhCN\DPSMate_ParserZHCN.lua
+
+DPSMate_EHealing\DPSMate_EffectiveHealing.lua
+DPSMate_EHealing\DPSMate_EffectiveHPS.lua
+DPSMate_EHealing\DPSMate_Details_EHealing.lua
+DPSMate_EHealing\DPSMate_Details_EHealing.xml
+DPSMate_EHealing\DPSMate_Details_EHealingTotal.lua
+DPSMate_EHealing\DPSMate_Details_EHealingTotal.xml
+
+DPSMate_Healing\DPSMate_Healing.lua
+DPSMate_Healing\DPSMate_HPS.lua
+DPSMate_Healing\DPSMate_Details_Healing.lua
+DPSMate_Healing\DPSMate_Details_Healing.xml
+DPSMate_Healing\DPSMate_Details_HealingTotal.lua
+DPSMate_Healing\DPSMate_Details_HealingTotal.xml

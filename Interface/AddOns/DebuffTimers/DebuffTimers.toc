@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title: DebuffTimers60addons最新修复
+## Notes: Timer Overlays for enemy buffs and debuffs
+## Title-zhCN: |CFFFF0000[战斗]|R减益时间监视
+## Notes-zhCN:  |CFFFF0000DebuffTimers|R|N在你的目标上的debuff位置上显示时间监视。|N命令：/DebuffTimers
+## X-Repple: 战斗
+## Author: Renew, based on: shirsig - aurae
+## SavedVariablesPerCharacter: AUF_settings
+## OptionalDeps: DPSMate, pfUI, LunaUnitFrames, XPerl_Target, DiscordUnitFrames, modui, UnitFramesImproved_Vanilla
+
+Debuffs.lua
+Buffs.lua
+
+DebuffTimers.lua

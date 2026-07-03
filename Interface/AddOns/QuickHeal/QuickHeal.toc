@@ -1,0 +1,17 @@
+## Interface: 11200
+## Title: QuickHeal 快速治疗V4a
+## Author: Thomas Thorsen, Scott Geeding and Kostas Karachalios
+## Notes: Quick healing of party/raid members
+## Title-zhCN:|cffFF4500[职业]|R[|CFFFFFFFF治疗|R] 快速治疗
+## Notes-zhCN:|CFFFFFF00QuickHeal|R|N快速治疗团队成员。|N命令：/qh help
+## X-Repple: 职业
+## OptionalDeps: BonusScanner,Titan Panel,myAddOns,CT_RaidAssist
+## SavedVariables: 
+## SavedVariablesPerCharacter: QuickHealVariables
+
+libs\RosterLib-2.0\RosterLib-2.0.lua
+
+libs\HealComm-1.0\HealComm-1.0.lua
+
+QuickHeal.xml
+HealingBar.xml

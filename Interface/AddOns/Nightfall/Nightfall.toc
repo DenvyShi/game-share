@@ -1,0 +1,12 @@
+﻿## Interface: 11200
+## Title: 夜幕触发器
+## Notes: Will warn if you have nightfall.
+## Title-zhCN:|cff0055FF夜幕效果显示|r
+## Notes-zhCN: 提示你获得夜幕效果|cff00ff0060addons|r
+## Title-zhCN:|CFFFFFF00[职业]|R|CFF9482C9术士|R夜幕提醒
+## Notes-zhCN:|CFFFFFF00Nightfall|R|N术士夜幕天赋效果触发的提醒插件，用鼠标可以托拽。
+## X-Repple: 术士
+## Author: Xerogen
+## Version: BETA 1.0
+Nightfall.xml
+## Q-CAT-Version: 100

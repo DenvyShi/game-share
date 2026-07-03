@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title: 插件管理器
+## Notes: 列出和组织您的所有插件，让您创建全局配置文件。
+## Title-zhCN:|CFF0055FF[插件整合]|R|CFF7FFF7F插件管理器|R|
+## Notes-zhCN:|CFF0055FF!Libs|RN汉化 by No.1|N列出和组织您的所有插件，让您创建全局配置文件。|N命令：/aoo
+## X-Repple: 插件整合
+## SavedVariables: AddOnOrganizer_Profiles
+## Author: Christian Schubert
+AddOnOrganizer.xml

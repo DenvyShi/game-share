@@ -1,0 +1,13 @@
+## Interface: 11200
+## Title: OmniCC 动作条技能冷却时间
+## Notes: CooldownCount for Everything
+## Title-zhCN:|CFFDD66DD[界面]|R动作条技能冷却时间
+## Notes-zhCN:|CFFDD66DD!OmniCC|R|N动作条技能冷却时间。|N命令：/omnicc
+## X-Repple: 界面
+## Author: Tuller
+## Version: 6.8.30
+## Dependencies:
+## SavedVariables: OmniCC
+cooldown.lua
+main.lua
+## Q-CAT-Version: 100

@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title: FeatureFrame
+## Notes: Feature AddOn Spellbook Menu
+## Title-zhCN:|CFF0099FF[系统]|R 插件设定中心
+## Notes-zhCN: 插件设定管理中心, 用来调整插件配置
+## X-IslerUI: 系统
+## OptionalDeps: MobileFrames
+## SavedVariables: FeatureFrame_CurrentOffset, FeatureFrameMinimapButton_OffsetX, FeatureFrameMinimapButton_OffsetY
+FeatureFrame.xml

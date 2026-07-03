@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title: PallyPower
+## Author: Aznamir
+## Title-zhCN:|CFFFFFF00[职业]|R|CFFF58CBA圣骑士|R祝福助手
+## Notes-zhCN:|CFFFFFF00PallyPower|R|N圣骑士祝福助手。|N命令：/pp|N命令：/pallypower
+## X-Repple: 职业
+## DefaultState: disabled
+## SavedVariablesPerCharacter: PP_PerUser,PallyPower_Assignments
+PallyPower.xml

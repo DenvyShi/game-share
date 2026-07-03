@@ -1,0 +1,18 @@
+## Interface: 11200
+## Title: IgnoreMore
+## Title-zhCN: 突破屏蔽限制
+## Notes: v1.02. Ignore more than 49 people, autoshared between your alts
+## Title-zhCN:|CFF33AAFF[辅助]|R突破屏蔽限制
+## Notes-zhCN:|CFF33AAFFIgnoreMore|R|N突破屏蔽限制。
+## X-Repple: 辅助
+## Author: Mikk of Bloodhoof-EU
+## Version: 1.02
+## eMail: dpsgnome@mail.com
+## DefaultState: Enabled
+## LoadOnDemand: 0
+## OptionalDeps: Chatr, ForgottenChat
+## SavedVariables: IgM_SV
+## SavedVariablesPerCharacter: 
+
+IgnoreMore.lua
+## Q-CAT-Version: 100

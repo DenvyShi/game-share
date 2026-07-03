@@ -1,0 +1,10 @@
+## Interface: 11200
+## Title:|cFF00FF00自动替换技能
+## Notes:当你学习了高等级的技能后自动替换动作条上的低等级技能。 |cFFFFFF00|n 乌龟服定制版
+## Title-zhCN:|CFF33AAFF[辅助]|R自动替换技能
+## Notes-zhCN:当你学习了高等级的技能后自动替换动作条上的低等级技能。 |cFFFFFF00|n 乌龟服定制版
+## Author: Tekkub Stoutwrithe
+## OptionalDeps: !Libs
+## Dependencies: !Libs
+
+Lern2Spell.lua

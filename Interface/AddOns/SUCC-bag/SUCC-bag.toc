@@ -1,0 +1,15 @@
+## Interface: 11200
+## Version: 1.35
+## Author: checkem ,shirsig(Clean Up),汉化MrBCat
+## Title: SUCC-bag 
+## Title-zhCN: SUCC-bag |cff33ffcc背包整合M2
+## Notes: Why sip if you can |cFFF6A3EFS U C C|cFFFFFFFF?|n(Yes! A bag addon.)
+## Notes-zhCN: 背包整合插件支持银行和自动整理品质染色
+## OptionalDeps: Clean Up
+## SavedVariables: SUCC_bagOptions
+
+SUCC-bag.lua
+Clean_Up.lua
+
+
+## X-Turtle-Shell-Version: 1705385626

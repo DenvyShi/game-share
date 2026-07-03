@@ -1,0 +1,9 @@
+﻿## Interface: 11200
+## Title:|CFFFF0000[战斗]|R战斗指示器（目标）
+## Notes:在屏幕指定位置显示玩家对目标造成的伤害、治疗量的数值。|N命令：/dex
+## X-Repple: 界面
+## SavedVariables: DEX_SAVE
+## OptionalDeps: myAddOns
+## Dependencies: 
+DamageEx.xml
+DEXoptions.xml

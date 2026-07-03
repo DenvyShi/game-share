@@ -1,0 +1,19 @@
+## Interface: 11200
+## Title: YaHT
+## Title-zhCN: |CFFFFFF00[职业]|R|CFFABD473猎人|R YaHT射击条助手
+## Notes: Yet another Hunter Timer.
+## Author: Avi
+## Dependencies: !Libs
+## SavedVariables: YaHTdb
+## OptionalDeps: Ace2, FuBar, FuBarPlugin-2.0, DewdropLib, TabletLib
+## X-Category: Hunter
+## X-Repple: 职业
+
+YaHT.lua
+
+locales\enUS.lua
+locales\zhCN.lua
+locales\deDE.lua
+locales\frFR.lua
+
+defaults.lua

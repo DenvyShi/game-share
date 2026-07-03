@@ -1,0 +1,11 @@
+## Interface: 11200
+## Title: [|cff3fcf26K|r] AntiDaze v0.7
+## Notes: Cancel Aspect of the Cheetah or Aspect of the Pack when you get dazed.
+## Title-zhCN:|CFFFFFF00[职业]|R|CFFABD473猎人|R猎豹守护助手
+## Notes-zhCN:|CFFFFFF00AntiDaze|R|N被攻击后自动取消猎豹守护或者群豹守护。|N命令：/ad options
+## X-Repple: 职业
+## OptionalDeps: myAddOns, Cosmos
+## SavedVariablesPerCharacter: ADOptions
+## DefaultState: disabled
+AntiDaze.xml
+AntiDazeOptions.xml

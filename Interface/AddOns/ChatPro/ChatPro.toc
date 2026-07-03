@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title: ChatPro
+## Title-zhCN:|CFF00FF00[|r|CFFDD66DD聊天Chat|r|CFF00FF00] ChatPro 聊天界面增强
+## Notes: 聊天窗口全面增强插件 (仿ChatMOD重构版)，职业着色，禁用渐隐，鼠标滚轮等
+## Author: Google Gemini 3.1 Pro Preview
+## Version: 1.0
+## SavedVariables: ChatProDB
+ChatPro.lua
+ChatPro.xml

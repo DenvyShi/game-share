@@ -1,0 +1,581 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   xsi:schemaLocation="http://www.blizzard.com/wow/ui/">
+	<Script file="localization.en.lua"/>
+	<Script file="localization.tw.lua"/>
+	<Script file="localization.cn.lua"/>
+	<Script file="localization.de.lua"/>
+	<Script file="localization.fr.lua"/>
+	<Script file="localization.kr.lua"/>
+	<Script file="FastQuest.lua"/>
+
+	<Frame name="FastQuestFrame" parent="UIParent" hidden="true" alpha="0.95" movable="true" enableMouse="true" enableKeyboard="true">
+
+
+
+<!-- *****************以下为自己添加的***************** -->
+		<Size>
+		<AbsDimension x="380" y="350" />
+		</Size>
+		<Anchors>
+		<Anchor point="CENTER" relativeTo="UIParent">
+			<Offset>
+			<AbsDimension x="0" y="0" />
+			</Offset>
+		</Anchor>
+		</Anchors>
+		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+		<BackgroundInsets>
+			<AbsInset left="11" right="12" top="12" bottom="11" />
+		</BackgroundInsets>
+		<TileSize>
+			<AbsValue val="32" />
+		</TileSize>
+		<EdgeSize>
+			<AbsValue val="32" />
+		</EdgeSize>
+		</Backdrop>
+		<Layers>
+		<Layer>
+			<Texture name="$parentTitleBorder" file="Interface\DialogFrame\UI-DialogBox-Header">
+			<Size>
+				<AbsDimension x="160" y="32" />
+			</Size>
+			<Anchors>
+				<Anchor point="TOP">
+				<Offset>
+					<AbsDimension x="0" y="5" />
+				</Offset>
+				</Anchor>
+			</Anchors>
+			<TexCoords left="0.2" right="0.8" top="0" bottom="0.6" />
+			</Texture>
+			<FontString name="$parentTitleString" inherits="GameFontNormal" text="FastQuest 设置">
+			<Size>
+				<AbsDimension x="140" y="0" />
+			</Size>
+			<Anchors>
+				<Anchor point="TOP">
+				<Offset>
+					<AbsDimension x="0" y="-4" />
+				</Offset>
+				</Anchor>
+			</Anchors>
+			</FontString>
+		</Layer>
+		</Layers>
+		<Frames>
+			
+			<CheckButton name="$parentCheckButton1" inherits="OptionsCheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="19" y="-32" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentText" inherits="GameFontNormal" text="开启任务通报">
+						<Anchors>
+							<Anchor point="LEFT" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="-2" y="0" />
+							</Offset>
+							</Anchor>
+						</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>
+						FastQuest_SlashCmd('alwaysnotify');
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:AddLine("根据组队情况，在说，队伍，团队频道播报任务进度", 0, .85, .85);			
+						GameTooltip:Show();
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+			</CheckButton>
+
+			<CheckButton name="$parentCheckButton2" inherits="OptionsCheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOP" relativeTo="$parentCheckButton1" relativePoint="BOTTOM">
+						<Offset><AbsDimension x="0" y="0"/></Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentText" inherits="GameFontNormal" text="详细的任务进度通报">
+						<Anchors>
+							<Anchor point="LEFT" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="-2" y="0" />
+							</Offset>
+							</Anchor>
+						</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>
+						FastQuest_SlashCmd('detail');
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:AddLine("详细的任务进度通报（如接受任务，任务完成等，关闭只播报进度）", 0, .85, .85);			
+						GameTooltip:Show();
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+			</CheckButton>
+
+			<CheckButton name="$parentCheckButton3" inherits="OptionsCheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOP" relativeTo="$parentCheckButton2" relativePoint="BOTTOM">
+						<Offset><AbsDimension x="0" y="0"/></Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentText" inherits="GameFontNormal" text="完成任务播放音效">
+						<Anchors>
+							<Anchor point="LEFT" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="-2" y="0" />
+							</Offset>
+							</Anchor>
+						</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>
+						FastQuest_SlashCmd('sound');
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:AddLine("设置任务完成时是否播放音效", 0, .85, .85);			
+						GameTooltip:Show();
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+			</CheckButton>
+
+			<CheckButton name="$parentCheckButton4" inherits="OptionsCheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOP" relativeTo="$parentCheckButton3" relativePoint="BOTTOM">
+						<Offset><AbsDimension x="0" y="0"/></Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentText" inherits="GameFontNormal" text="在追踪窗口中根据任务难度显示不同颜色">
+						<Anchors>
+							<Anchor point="LEFT" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="-2" y="0" />
+							</Offset>
+							</Anchor>
+						</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>
+						FastQuest_SlashCmd('color');
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:AddLine("在追踪窗口中根据任务难度显示不同颜色", 0, .85, .85);			
+						GameTooltip:Show();
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+			</CheckButton>
+
+			<CheckButton name="$parentCheckButton5" inherits="OptionsCheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOP" relativeTo="$parentCheckButton4" relativePoint="BOTTOM">
+						<Offset><AbsDimension x="0" y="0"/></Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentText" inherits="GameFontNormal" text="任务追踪窗口显示任务难度 (精英, 团队,等等) ">
+						<Anchors>
+							<Anchor point="LEFT" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="-2" y="0" />
+							</Offset>
+							</Anchor>
+						</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>
+						FastQuest_SlashCmd('tag')
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:AddLine("任务追踪窗口显示任务难度", 0, .85, .85);
+						GameTooltip:Show();
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+			</CheckButton>
+
+			<CheckButton name="$parentCheckButton6" inherits="OptionsCheckButtonTemplate">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentCheckButton5" relativePoint="bottom">
+						<Offset><AbsDimension x="0" y="0"/></Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentText" inherits="GameFontNormal" text="自动添加当前的任务到追踪窗口并移除已完成的任务">
+						<Anchors>
+							<Anchor point="LEFT" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="-2" y="0" />
+							</Offset>
+							</Anchor>
+						</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>
+						FastQuest_SlashCmd('autoadd');
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:AddLine("自动添加当前的任务到追踪窗口并移除已完成的任务");
+						GameTooltip:AddLine("启用此功能需关闭ESC-界面设置-自动任务追踪 和 其他插件任务追踪功能", 0, .85, .85);			
+						GameTooltip:Show();
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+			</CheckButton>
+
+			<CheckButton name="$parentCheckButton7" inherits="OptionsCheckButtonTemplate">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentCheckButton6" relativePoint="bottom">
+						<Offset><AbsDimension x="0" y="0"/></Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentText" inherits="GameFontNormal" text="自动交接任务">
+						<Anchors>
+							<Anchor point="LEFT" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="-2" y="0" />
+							</Offset>
+							</Anchor>
+						</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>
+						FastQuest_SlashCmd('autoquest');
+					</OnClick>
+					<!-- <OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:AddLine("自动交接任务");
+						GameTooltip:AddLine("启用此功能需关闭ESC-界面设置-自动任务追踪 和 其他插件任务追踪功能", 0, .85, .85);			
+						GameTooltip:Show();
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave> -->
+				</Scripts>
+			</CheckButton>
+
+			<!-- <CheckButton name="$parentCheckButton7" inherits="OptionsCheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOP" relativeTo="$parentCheckButton6" relativePoint="BOTTOM">
+						<Offset><AbsDimension x="0" y="0"/></Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentText" inherits="GameFontNormal" text="锁定任务追踪窗口使其不可移动（更改此项需重载插件）">
+						<Anchors>
+							<Anchor point="LEFT" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="-2" y="0" />
+							</Offset>
+							</Anchor>
+						</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>
+						FastQuest_SlashCmd('nodrag');
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:AddLine("设置任务追踪窗口是否可移动（更改此项需重载插件）", 0, .85, .85);			
+						GameTooltip:Show();
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+			</CheckButton> -->
+
+			<Button name="$parentButtonClose" inherits="OptionsButtonTemplate" text="关闭">
+				<Size>
+				<AbsDimension x="60" y="26" />
+				</Size>
+				<Anchors>
+				<Anchor point="BOTTOM">
+					<Offset>
+					<AbsDimension x="0" y="20" />
+					</Offset>
+				</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						FastQuestFrame:Hide();
+					</OnClick>
+				</Scripts>
+			</Button>
+
+
+			<Button name="$parentButton5" inherits="OptionsButtonTemplate" text="恢复默认追踪位置" hidden="false">
+				<Size>
+				<AbsDimension x="120" y="26" />
+				</Size>
+				<Anchors>
+				<Anchor point="BOTTOMLEFT">
+					<Offset>
+						<AbsDimension x="20" y="60" />
+					</Offset>
+				</Anchor>
+				</Anchors>
+				<Scripts>
+					<Onload>
+					</Onload>
+					<OnClick>
+							FastQuest_SlashCmd('nodrag');
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:AddLine("设置任务追踪窗口是否可移动（更改此项需重载插件）", 0, .85, .85);
+						GameTooltip:Show();
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentButton6" inherits="OptionsButtonTemplate" text="重载插件" hidden="true">
+				<Size>
+				<AbsDimension x="60" y="26" />
+				</Size>
+				<Anchors>
+				<Anchor point="BOTTOM">
+					<Offset>
+						<AbsDimension x="0" y="60" />
+					</Offset>
+				</Anchor>
+				</Anchors>
+				<Scripts>
+					<Onload>
+					</Onload>
+					<OnClick>
+						FastQuest_ReloadUI();
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:AddLine("重载界面UI", 0, .85, .85);
+						GameTooltip:Show();
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+			</Button>
+
+
+			<Button name="$parentButton1" inherits="OptionsButtonTemplate" text="隐藏" hidden="false">
+				<Size>
+				<AbsDimension x="60" y="26" />
+				</Size>
+				<Anchors>
+				<Anchor point="BOTTOM">
+					<Offset>
+						<AbsDimension x="0" y="60" />
+					</Offset>
+				</Anchor>
+				</Anchors>
+				<Scripts>
+					<Onload>
+					</Onload>
+					<OnClick>
+						if (this:GetText() == "隐藏") then
+							FastQuest_SlashCmd('lock');
+						else
+							FastQuest_SlashCmd('unlock');
+						end
+						FastQuest_LockMovableParts()
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:AddLine("设置移动任务追踪窗口按钮", 0, .85, .85);
+						GameTooltip:Show();
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentButton2" inherits="OptionsButtonTemplate" text="重置位置" hidden="false">
+				<Size>
+					<AbsDimension x="80" y="26" />
+				</Size>
+				<Anchors>
+				<Anchor point="BOTTOMRIGHT">
+					<Offset>
+						<AbsDimension x="-20" y="60" />
+					</Offset>
+				</Anchor>
+				</Anchors>
+				<Scripts>
+					<Onload>
+					</Onload>
+					<OnClick>
+							FastQuest_SlashCmd('reset');
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:AddLine("锁定任务追踪窗口位置", 0, .85, .85);
+						GameTooltip:Show();
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentButton3" inherits="OptionsButtonTemplate" text="取消所有任务追踪" hidden="false">
+				<Size>
+				<AbsDimension x="120" y="26" />
+				</Size>
+				<Anchors>
+				<Anchor point="BOTTOMRIGHT">
+					<Offset>
+					<AbsDimension x="-20" y="20" />
+					</Offset>
+				</Anchor>
+				</Anchors>
+				<Scripts>
+					<Onload>
+
+					</Onload>
+					<OnClick>
+						FastQuest_SlashCmd('clear');
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:AddLine("取消所有任务追踪", 0, .85, .85);
+						GameTooltip:Show();
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentButton4" inherits="OptionsButtonTemplate" text="任务名称格式" hidden="false">
+				<Size>
+				<AbsDimension x="120" y="26" />
+				</Size>
+				<Anchors>
+				<Anchor point="BOTTOMLEFT">
+					<Offset>
+					<AbsDimension x="20" y="20" />
+					</Offset>
+				</Anchor>
+				</Anchors>
+				<Scripts>
+					<Onload>
+
+					</Onload>
+					<OnClick>
+						FastQuest_SlashCmd('format');
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:AddLine("任务名称格式");
+						GameTooltip:AddLine("(按 Ctrl 点选任务或完成播报时) 在聊天框中显示任务名称格式", 0, .85, .85);
+						GameTooltip:AddLine("共4种每按一次切换一种, 如:[10+]任务名称,[10]任务名称(精英)", 0, .85, .85);
+						GameTooltip:Show();
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+			</Button>
+
+		</Frames>
+		<!-- *****************以上为自己添加的***************** -->
+
+		<Scripts>
+			<OnLoad>FastQuest_OnLoad();</OnLoad>
+			<OnEvent>FastQuest_OnEvent(event,arg1);</OnEvent>
+			<OnEscapePressed>
+				this:Hide();
+			</OnEscapePressed>
+			<OnMouseDown>
+				if ( ( ( not this.isLocked ) or ( this.isLocked == 0 ) ) and ( arg1 == "LeftButton" ) ) then
+					this:StartMoving();
+					this.isMoving = true;
+				end
+			</OnMouseDown>
+			<OnMouseUp>
+				if ( this.isMoving ) then
+					this:StopMovingOrSizing();
+					this.isMoving = false;
+				end
+			</OnMouseUp>
+		</Scripts>
+
+	</Frame>
+	<Button name="FastQuest_DragButtonTemplate" virtual="true" movable="true" frameStrata="DIALOG" toplevel="true">
+		<Scripts>
+			<OnMouseDown>FastQuest_DragFrame(this, 0)</OnMouseDown>
+			<OnMouseUp>FastQuest_DragFrame(this, 1)</OnMouseUp>
+		</Scripts>
+		<Size><AbsDimension x="15" y="15"/></Size>
+		<NormalTexture file="Interface\AddOns\FastQuest\FastQuest"/>
+	</Button>
+	<Frame name="FastQuest_DragFrameTemplate" virtual="true" frameStrata="BACKGROUND" visible="false" parent="UIParent" toplevel="true">
+		<TitleRegion setAllPoints="true"/>
+		<Size><AbsDimension x="36" y="36"/></Size>
+	</Frame> 
+	<Button name="dQuestWatchDragButton" inherits="FastQuest_DragButtonTemplate" parent="UIParent">
+		<Anchors><Anchor point="TOPRIGHT"><Offset><AbsDimension x="-250" y="-250"/></Offset></Anchor></Anchors>	
+		<Frames><Frame name="dQuestWatch" inherits="FastQuest_DragFrameTemplate"></Frame></Frames>
+	</Button> 
+
+</Ui>

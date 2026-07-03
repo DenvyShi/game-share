@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title: NotGrid |cff7fff7f -Ace2-|r
+## Title-zhCN: NotGrid |cff7fff7f 团队框架|r
+## Notes: It's Not Grid
+## Notes-ruRU: Это не Grid
+## SavedVariablesPerCharacter: NotGridOptions
+
+localization.lua
+core.lua
+frames.lua
+mapsizes.lua
+proximity.lua
+options.lua
+menus.lua

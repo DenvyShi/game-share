@@ -1,0 +1,26 @@
+﻿## Interface: 11200
+## Author: Moonsorrow - edit Tylka-Genesis
+## Title: |cff7fff7f XRS|r
+## Notes: Status Information about the Raid Group
+## Title-zhCN:|CFFEE7600[团长工具]|R团队增益状态检查
+## Notes-zhCN:|CFFEE7600XRS|R|N可以检查团队的BUFF等数据，建议团长使用。
+## X-Repple: 团队
+## Version: 1.12.3
+## DefaultState: disabled
+## X-Build: $Revision: 15000
+## X-ReleaseDate: "$Date: 2016-01-20$"
+## X-Category: Raid
+## X-eMail: moonsorrow@gmx.de
+## X-Website: http://www.for-the-horde.de
+## SavedVariables: XRSDB
+## Dependencies: !Libs
+
+localizations\enUS.lua
+localizations\zhCN.lua
+
+XRS_Defaults.lua
+XRS.lua
+XRS_BarClass.lua
+XRS_TooltipClasses.lua
+XRS_BuffClass.lua
+## Q-CAT-Version: 000200

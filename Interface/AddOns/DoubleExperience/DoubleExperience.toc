@@ -1,0 +1,11 @@
+## Interface: 11200
+## Title: DoubleExperience|cff00ffff[双倍经验]
+## Notes: 小窗口中查看双倍经验积攒情况|N|CFF00FFFF小地图下方按钮|R可控制也可通过命令|N/DBESHOW 显示窗口|N/DBEHIDE 隐藏窗口|N/DBEREST 重置窗口位置|N|CFFDD66DD作者: 瞌睡熊|R
+## Title-zhCN:|CFFDD66DD[界面]|R双倍经验
+## Notes-zhCN:|CFFDD66DDDoubleExperience|R|N|CFFDD66DD作者: 瞌睡熊|R|N小窗口中查看双倍经验积攒情况。|N命令：/DBESHOW 显示窗口|N命令：/DBEHIDE 隐藏窗口|N命令：/DBEREST 重置窗口位置
+## X-Repple: 界面
+## Version: 2.0
+## SavedVariables: DOUBL_EXPERIENCE_OPTIONS
+DoubleExperience.lua
+
+## X-Turtle-Shell-Version: 1694589699

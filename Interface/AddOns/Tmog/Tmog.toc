@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title:|CFF33AAFF[辅助]|R幻化仓库
+## Author: Otari98
+## Version: 2.0
+## Notes: 能够在任意地点打开幻化仓库，查看幻化收集情况。|n/Tmog show |cFFFFFF00|n 乌龟服定制版 by Sunelegy
+## SavedVariablesPerCharacter: TMOG_CACHE, TMOG_PLAYER_OUTFITS, TMOG_TRANSMOG_STATUS, TMOG_POSITION
+
+Tmog.xml

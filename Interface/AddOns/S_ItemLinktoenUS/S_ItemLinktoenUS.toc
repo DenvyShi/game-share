@@ -1,0 +1,10 @@
+## Interface: 11200
+## Title: S_ItemLinktoenUS
+## Notes: Shows ItemLink in English when you alt-leftclick bag item.
+## Title-zhCN:|CFF33AAFF[辅助]|R中/英文物品链接翻译
+## Notes-zhCN:|CFF33AAFFS_ItemLinktoenUS|R|NAlt+左键自动添加英文物品链接。|NShift+左键自动添加中文物品链接。
+## X-Repple: 辅助
+## Author: Areuhungry, 1.12 modify by 狗血编剧男
+## Version: 1.0.0
+
+S_ItemLinktoenUS.lua

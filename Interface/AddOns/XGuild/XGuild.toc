@@ -1,0 +1,11 @@
+## Interface: 11200
+## Title: X-Guild
+## Notes: X-Guild
+## Title-zhCN:|CFF33AAFF[辅助]|R列表增强显示
+## Notes-zhCN:|CFF33AAFFXGuild|R|N彩色显示你的公会、查询、好友列表。
+## X-Repple: 辅助
+## Version: 1.2.0
+## Author: Zek、Xgale
+## OptionalDeps:
+## SavedVariables:
+XGuild.lua

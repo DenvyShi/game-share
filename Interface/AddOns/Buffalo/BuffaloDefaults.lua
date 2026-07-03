@@ -1,0 +1,17 @@
+BUFFALO_DEFAULT_OPTIONS = {
+	anchor = {buff="TOPRIGHT", debuff="TOPRIGHT", weapon="TOPRIGHT"},
+	xPos = {buff=-180, debuff=-180, weapon=-180},
+	yPos = {buff=-22, debuff=-120, weapon=-170},
+	scale = {buff = 1.0, debuff = 1.0, weapon = 1.0},
+	padding = {	buff = {x=4, y=19},
+				debuff = {x=4, y=19},
+				weapon = {x=4, y=19}},
+	growRight = {buff = false, debuff = false, weapon = false},
+	growUpwards = {buff = false, debuff = false, weapon = false},
+	rows = {buff=2, debuff=1, weapon=1},
+	cols = {buff=16, debuff=16, weapon=2},
+	growHorizontalFirst = {buff = true, debuff = true, weapon = true},
+	locked = true,
+	verboseTimers = {buff = false, debuff = false, weapon = false},
+	flashes = {buff = false, debuff = false, weapon = false},
+}

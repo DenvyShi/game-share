@@ -1,0 +1,12 @@
+## Interface: 11200
+## Title-zhCN: 频道自动喊话  命令：/auto
+## Notes: Please Don't Spam!
+## Title-zhCN:|CFF33AAFF[辅助]|R自动频道喊话
+## Notes-zhCN:|CFF33AAFFAutoMessage|R|N频道自动喊话。|N命令：/autom
+## X-Repple: 辅助
+## Author: The BOFH (Stewarta of Nordrassil)
+## SavedVariables:ticktime, channame, am, charname
+AutoMessage.xml
+
+
+## X-Turtle-Shell-Version: 1695262986

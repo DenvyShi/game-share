@@ -1,0 +1,10 @@
+﻿## Interface: 11200
+## Title: zTip
+## Notes: Enhance Unit Tooltip, and customize tip position|Nmade by Zero Fire (zero_wows@yahoo.com.cn)
+## Title-zhCN: |CFFDD66DD[界面]|R炽火鼠标提示
+## Notes-zhCN:|CFFDD66DDzTip|R|N显示目标的各项基本信息，新增显示目标抗性及专业技能提示。
+## Version: 1.19
+## Author: Zero Fire
+## Author-zhCN: 炽火 Zero ℃, 1.12 modify by 狗血编剧男
+## OptionalDeps: Warmup
+zTip.lua

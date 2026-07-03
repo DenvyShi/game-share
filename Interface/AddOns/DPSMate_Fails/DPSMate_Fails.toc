@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFFails|r
+## Notes: Adds the modules for the fail evaluation.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF失误模块
+## Notes-zhCN:|CFFFF8080DPSMate_Fails|R|NDPSMate增加失误模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_Fails.lua
+DPSMate_Details_Fails.lua
+DPSMate_Details_Fails.xml
+DPSMate_Details_FailsTotal.lua
+DPSMate_Details_FailsTotal.xml

@@ -1,0 +1,11 @@
+## Interface: 11200
+## Version: 11200.1
+## Title: Fizzwidget Hunter's Helper
+## Author: Gazmik Fizzwidget
+## Notes: Helps you find tameable beasts to learn pet skills from.
+## Title-zhCN:|CFFFFFF00[职业]|R|CFFABD473猎人|R野兽技能显示
+## Notes-zhCN:|CFFFFFF00GFW_HuntersHelper|R|N显示野兽所拥有的技能。
+## X-Repple: 职业
+## SavedVariables: FHH_Config, FHH_AbilityInfo, FHH_NewInfo
+## DefaultState: disabled
+HuntersHelper.xml

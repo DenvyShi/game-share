@@ -1,0 +1,16 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFAuras|r
+## Notes: Adds the modules for gained auras, lost auras and aura uptimes.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF光环模块
+## Notes-zhCN:|CFFFF8080DPSMate_Auras|R|NDPSMate增加了获得光环、失去光环和光环持续时间的模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_AurasGained.lua
+DPSMate_AurasLost.lua
+DPSMate_AuraUptimers.lua
+DPSMate_Details_Auras.lua
+DPSMate_Details_Auras.xml
+DPSMate_Details_AurasTotal.lua
+DPSMate_Details_AurasTotal.xml

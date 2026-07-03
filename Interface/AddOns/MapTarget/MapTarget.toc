@@ -1,0 +1,10 @@
+## Interface: 11200
+## Title: MapTarget
+## Notes: Minimap tracking improvements for hunters.
+## Title-zhCN:|CFFFFFF00[职业]|R|CFFABD473猎人|R小地图目标选取
+## Notes-zhCN:|CFFFFFF00MapTarget|R|N猎人快速选取小地图目标。
+## X-Repple: 职业
+## Author: EinBaum https://github.com/EinBaum
+## DefaultState: disabled
+## Version: 2.1
+MapTarget.lua

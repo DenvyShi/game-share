@@ -1,0 +1,11 @@
+﻿## Interface:11200
+## Title:DistanceWarning v 1.7.4 简体中文版
+## Notes:DistanceWarning
+## Title-zhCN:|CFF33AAFF[辅助]|R战斗距离
+## Notes-zhCN:|CFF33AAFFDistanceWarning|R|N战斗距离显示。|N命令：/dw
+## X-Repple: 辅助
+## Author:卡特铁角
+## SavedVariables:DISTANCEWARNING_SAVE
+## OptionalDeps:
+## Dependencies:
+DistanceWarning.xml

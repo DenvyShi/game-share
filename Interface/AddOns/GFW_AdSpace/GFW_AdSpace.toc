@@ -1,0 +1,18 @@
+## Interface: 11200
+## Version: 11200.4
+## Title: GFW_AdSpace
+## Notes: Helps you save money by not buying marked-up vendor recipes at AH, points out other useful item info.
+## Title-zhCN:|CFF33AAFF[辅助]|R配方声望物品信息提示
+## Notes-zhCN:|CFF33AAFFGFW_AdSpace|R|N银色黎明、暗月马戏团、瑟银兄弟会、木喉熊怪、赞达拉部族、塞纳里奥议会、诺兹多姆的子嗣等势力的声望物品提示。
+## X-Repple: 辅助
+## Author: Gazmik Fizzwidget
+## X-Credits: Roadblock (LightsHope changes)
+## SavedVariables: FAS_Config
+GFWUtils.lua
+GFWTable.lua
+GFWTooltip.lua
+localization.lua
+AdSpace_ItemInfo.lua
+AdSpace_Vendors.lua
+AdSpace.lua
+AdSpace.xml

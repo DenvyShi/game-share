@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title:|cffFF4500[职业]|r[|cffff7d0a德鲁伊|R] 变身蓝条
+## Notes: 德鲁伊变身后显示法力值条
+## Author: GitHub-gashole,黑猫插件汉化修复
+## OptionalDeps: Ace2, DruidManaLib
+## SavedVariablesPerCharacter: DruidManaBarDB
+## DefaultState: disabled
+## Version: 240627
+DruidManaBar.lua

@@ -1,0 +1,25 @@
+## Interface: 11200
+## Title: EN_UnitFrames
+## Notes: EN_UnitFrames
+## Title-zhCN:En_UnitFrames EUF头像精简版
+## Notes-zhCN:默认头像框架增强（带血量预估）。|N移动:Alt+左键  焦点头像：Ctrl+Alt+左键  重置:右键
+## Title-zhCN:|CFFDD66DD[界面]|R头像增强[EUF]
+## Notes-zhCN:|CFFDD66DDEN_UnitFrames|R|N默认头像增强，请打开暴雪默认的显示目标的目标。|NAlt+左键点击头像移动， |N焦点头像：Ctrl+Alt+左键 |N还原头像默认位置：/reseteuf
+## X-Repple: 界面
+## X-Repple: 界面
+## Author: nj55top，Neronix, 1.12 modify by 狗血编剧男
+## Dependencies: !Libs
+## SavedVariablesPerCharacter:En_HideText
+En_Info.xml
+En_Buff.lua
+En_FrameTips.lua
+En_ToT.xml
+En_XPRP.xml
+##宽血条美化、血条平滑渐变
+En_UFI.lua
+##默认位置、框架移动
+En_FramesPoint.lua
+##能量/法力恢复监视
+En_PowerTick.lua
+##玩家头像显示被控制技能
+En_LoseControl.xml

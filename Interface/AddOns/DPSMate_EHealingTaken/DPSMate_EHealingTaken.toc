@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFEffective healing taken|r
+## Notes: Adds the modules for the effective healing taken evaluation.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF有效治疗模块[接受]
+## Notes-zhCN:|CFFFF8080DPSMate_EHealingTaken|R|NDPSMate增加接受有效治疗模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_EffectiveHealingTaken.lua
+DPSMate_Details_EHealingTaken.lua
+DPSMate_Details_EHealingTaken.xml
+DPSMate_Details_EHealingTakenTotal.lua
+DPSMate_Details_EHealingTakenTotal.xml

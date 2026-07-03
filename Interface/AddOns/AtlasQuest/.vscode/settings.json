@@ -1,0 +1,12 @@
+{
+    "Lua.diagnostics.globals": [
+        "SlashCmdList",
+        "ChatFrame1",
+        "DressUpItemLink",
+        "DEFAULT_CHAT_FRAME",
+        "ShoppingTooltip2",
+        "ShoppingTooltip1",
+        "ELITE",
+        "RAID"
+    ]
+}

@@ -1,0 +1,8 @@
+/tdistance unlock   解除锁定
+/tdistance lock   锁定位置
+/tdistance x 0  设置横向位置（相对中心线）
+/tdistance y 200  设置横向位置（相对中心线）
+/tdistance hide  隐藏
+/tdistance show  显示
+/tdistance desc  切换详细信息显示
+/tdistance dead  切换死亡目标距离显示

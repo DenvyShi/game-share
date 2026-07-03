@@ -1,0 +1,11 @@
+## Interface: 11200
+## Title: S_ActionCount
+## Notes: Monitor material count on action bar
+## Title-zhCN:|CFF33AAFF[辅助]|R技能上显示材料数量
+## Notes-zhCN:|CFF33AAFFS_ActionCount|R|N技能上显示材料数量。
+## X-Repple: 辅助
+## Version: 1.00
+## Dependencies: !Libs
+## Author: prozhong, 1.12 modify by 狗血编剧男
+
+S_ActionCount.lua

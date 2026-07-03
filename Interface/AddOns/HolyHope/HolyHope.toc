@@ -1,0 +1,12 @@
+## Interface: 11200
+## Title: |cFF8000FFHolyHope 骑士祝福助手 岛上小鱼 汉化版|r
+## Notes: Gestion des benedictions du Paladin.
+## OptionalDeps:
+## Dependencies:
+## DefaultState:
+## X-Repple: 职业
+## SavedVariables: HolyHope_Config
+HolyHope.xml
+
+
+## X-Turtle-Shell-Version: 1696774867

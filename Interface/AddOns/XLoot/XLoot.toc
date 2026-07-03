@@ -1,0 +1,28 @@
+## Interface: 11200
+## Title: XLoot |cff7fff7f -Ace2-|r
+## Notes: A remake of the built-in lootframe. |cffff4488By Xuerian|r.
+## Title-zhCN:|CFF33AAFF[辅助]|R拾取增强
+## Notes-zhCN:|CFF33AAFFXLoot|R|N拾取物品时拾取窗口自动跟随鼠标的位置，也可以通过链接发送物品的名称到相应的频道。
+## X-Repple: 辅助
+## Version: 0.9
+## Author: Xuerian
+## X-Category: Loot
+## X-AceForum: 2278
+## X-eMail: sky.shell@gmail.com
+## X-Website: http://wowace.com/index.php/XLoot
+## X-Credits: Arm of Aman Thul on Argent Dawn for testing, the authors of all the embeds XLoot uses, #wowace on Freenode.net for being my support group and helping fix bugs, fenlis for koKR translation, Cinedelle for frFR translation
+
+## OptionalDeps: !Libs
+## Dependencies: !Libs
+## X-Embeds: Ace2, DewdropLib, Deformat, AnchorsAway
+## SavedVariables: XLootDB
+
+XLoot.lua
+XLootSkin.lua
+XLootOptions.lua
+
+XLootUtilities.lua
+XLootRowTools.lua
+
+localization.enUS.lua
+localization.zhCN.lua

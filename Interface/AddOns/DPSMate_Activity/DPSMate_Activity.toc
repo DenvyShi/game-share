@@ -1,0 +1,10 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFActivity|r
+## Notes: Adds the activity module.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF激活模块
+## Notes-zhCN:|CFFFF8080DPSMate_Activity|R|NDPSMate增加激活模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_Activity.lua

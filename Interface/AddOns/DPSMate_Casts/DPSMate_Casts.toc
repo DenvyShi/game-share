@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFCasts|r
+## Notes: Adds the casts module.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF施法模块
+## Notes-zhCN:|CFFFF8080DPSMate_Casts|R|NDPSMate增加施法模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_Casts.lua
+DPSMate_Details_Casts.lua
+DPSMate_Details_Casts.xml
+DPSMate_Details_CastsTotal.lua
+DPSMate_Details_CastsTotal.xml

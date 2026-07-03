@@ -1,0 +1,12 @@
+## Interface: 11200
+## Title: Classic Snowfall
+## Author: Vallan
+## Notes: Keydown Cast Support for Vanilla
+## Title-zhCN:|CFFFFFF00[职业]|R|CFF2EFEF7全职业|R快速执行按钮动作
+## Notes-zhCN:|CFFFFFF00ClassicSnowfall|R|N按下按钮即刻释放技能|N原始状态是松开按钮才释放，开启此插件可以提高BOSS战的DPS。
+## X-Repple: 职业
+## OptionalDeps: !Libs
+## Version: 0.5
+## DefaultState: disabled
+## SavedVariablesPerCharacter: CS_SELF_ENABLED
+ClassicSnowfall.lua

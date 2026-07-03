@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFFriendly Fire|r
+## Notes: Adds the modules for the friendly fire evaluation.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF友方误伤模块
+## Notes-zhCN:|CFFFF8080DPSMate_FriendlyFire|R|NDPSMate增加友方误伤模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_FriendlyFire.lua
+DPSMate_Details_FriendlyFire.lua
+DPSMate_Details_FriendlyFire.xml
+DPSMate_Details_FriendlyFireTotal.lua
+DPSMate_Details_FriendlyFireTotal.xml

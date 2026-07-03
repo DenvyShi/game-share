@@ -1,0 +1,68 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   xsi:schemaLocation="http://www.blizzard.com/wow/ui/"> 
+	<Script file="localization.lua"/>
+	<Script file="damageEx.lua"/>
+	
+	<FontString name="damageExFont" font="Fonts\FZJZJW.TTF" virtual="true">
+		<FontHeight>
+			<AbsValue val="22"/>
+		</FontHeight>
+		<Anchors>
+			<Anchor point="CENTER">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Shadow />
+	</FontString>
+	
+	<Frame name="DEX_TEXT" toplevel="true" enableMouse="false" parent="UIParent" frameStrata="HIGH">
+		<Size>
+			<AbsDimension x="24" y="24"/>
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER">
+				<Offset>
+					<AbsDimension x="0" y="60"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+	
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString name="DEXaniText1" inherits="damageExFont"/>
+				<FontString name="DEXaniText2" inherits="damageExFont"/>
+				<FontString name="DEXaniText3" inherits="damageExFont"/>
+				<FontString name="DEXaniText4" inherits="damageExFont"/>
+				<FontString name="DEXaniText5" inherits="damageExFont"/>
+				<FontString name="DEXaniText6" inherits="damageExFont"/>
+				<FontString name="DEXaniText7" inherits="damageExFont"/>
+				<FontString name="DEXaniText8" inherits="damageExFont"/>
+				<FontString name="DEXaniText9" inherits="damageExFont"/>
+				<FontString name="DEXaniText10" inherits="damageExFont"/>
+				<FontString name="DEXaniText11" inherits="damageExFont"/>
+				<FontString name="DEXaniText12" inherits="damageExFont"/>
+				<FontString name="DEXaniText13" inherits="damageExFont"/>
+				<FontString name="DEXaniText14" inherits="damageExFont"/>
+				<FontString name="DEXaniText15" inherits="damageExFont"/>
+				<FontString name="DEXaniText16" inherits="damageExFont"/>
+				<FontString name="DEXaniText17" inherits="damageExFont"/>
+				<FontString name="DEXaniText18" inherits="damageExFont"/>
+				<FontString name="DEXaniText19" inherits="damageExFont"/>
+				<FontString name="DEXaniText20" inherits="damageExFont"/>		
+			</Layer>		
+		</Layers>
+		
+		<Scripts>
+	      	<OnLoad>
+				DEX_OnLoad();
+	      	</OnLoad>
+	      	<OnEvent>
+	        	DEX_OnEvent(event, arg1, arg2, arg3, arg4);
+	      	</OnEvent>	     
+			<OnUpdate>
+	        	DEX_GameUpdate(arg1);
+	      	</OnUpdate>			
+		</Scripts>
+	</Frame>	
+</Ui>

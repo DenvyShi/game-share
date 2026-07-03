@@ -1,0 +1,13 @@
+## Interface: 11200
+## Title: ClassicMacros
+## Notes: Bringing retail macro commands to classic WoW.
+## Title-zhCN:ClassicMacros 经典简化宏
+## Notes-zhCN:可以像经典怀旧服那样写一些宏
+## Title-zhCN:|CFF33AAFF[辅助]|R宏-经典简化宏
+## Notes-zhCN:|CFF33AAFFClassicMacros|R|N可以像经典怀旧服那样写一些宏。
+## Author: Avi, _brain
+## Dependencies: !Libs
+
+ClassicMacros.lua
+CleverMacro.lua
+Compat.lua

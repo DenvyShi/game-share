@@ -1,0 +1,15 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFThreat|r
+## Notes: Adds the modules for the threat evaluation.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF仇恨模块
+## Notes-zhCN:|CFFFF8080DDPSMate_Threat|R|NDPSMate增加仇恨模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate, KLHThreatMeter
+
+DPSMate_Threat.lua
+DPSMate_TPS.lua
+DPSMate_Details_Threat.lua
+DPSMate_Details_Threat.xml
+DPSMate_Details_ThreatTotal.lua
+DPSMate_Details_ThreatTotal.xml

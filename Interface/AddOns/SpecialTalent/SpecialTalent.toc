@@ -1,0 +1,16 @@
+# Do not delete the following line!
+## Interface: 11200
+## Title: |cffFF4500[C]|R[可选] 天赋模拟器
+## Notes:改进的天赋框架。您可以同时查看所有三个天赋树。|N顶部汇总显示学习和计划学习的分配方案。可以保存20个方案模板。
+## Author: KrekoG, Wind ，黑猫插件
+## Version: 1.0.0
+## SavedVariables: SpecialTalentPlannedSaved SpecialTalentFrameSaved
+## 原本网址：https://github.com/KrekoG/SpecialTalentUI https://github.com/KrekoG/SpecialTalent
+## First created: Apr 2006
+SpecialTalent.lua
+SpecialTalentUI.xml
+
+
+
+
+

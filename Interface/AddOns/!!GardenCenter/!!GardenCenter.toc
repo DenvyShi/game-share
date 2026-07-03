@@ -1,0 +1,21 @@
+## Interface: 11200
+## Title: |CFF7FFF7FMING's WoWUI|R
+## Notes: The console of Repple, includes some useful addons.
+## Title-zhCN: |CFF0055FF[插件整合]|R|CFF7FFF7F插件控制面板|R
+## Notes-zhCN:  |CFF0055FF!!GardenCenter|R插件控制面板，修改自Isler's WoWUI|N|CFFFF0000必须加载|R
+## X-Repple: 插件整合
+## Author: GNIM
+## Version: 2.4.3.5
+## SavedVariablesPerCharacter: MCP_Config
+## SavedVariables: IEFMinimapButton_OffsetX, IEFMinimapButton_OffsetY, FeatureFrame_CurrentOffset, FeatureFrameMinimapButton_OffsetX, FeatureFrameMinimapButton_OffsetY
+## OptionalDeps: !Libs, Ace2, Titan
+## Dependencies: !Libs
+
+## 插件设定管理中心
+FeatureFrame\FeatureFrame.xml
+
+## 设定中心配置平台
+ControlPanel.lua
+
+## 插件管理面板
+MCP\MCP.xml

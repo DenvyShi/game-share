@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title: 盗贼能量回路(一瞬千击!)
+## Version: 1.0.4.11200
+## Author: Logan, Roadblock
+## SavedVariables: RogueFocusConfig
+RogueFocus.xml
+RogueFocusOptions.xml
+
+## X-Turtle-Shell-Version: 1692243442

@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title: |CFFEE7600[DPS统计]|RDPSMate+|cFFFFFFFFOverhealing taken|r
+## Notes: Adds the modules for the overhealing taken evaluation.
+## Title-zhCN:|CFFEE7600[DPS统计]|R|cFFFFFFFF过量治疗模块[受到]
+## Notes-zhCN:|CFFFF8080DPSMate_OverhealingTaken|R|NDPSMate增加受到过量治疗模块。
+## X-Repple: 战斗
+## Author: Shino, Kronos, Sunelegy（咖啡奶茶）
+## Dependencies: DPSMate
+
+DPSMate_OHealingTaken.lua
+DPSMate_Details_OHealingTaken.lua
+DPSMate_Details_OHealingTaken.xml
+DPSMate_Details_OverhealingTakenTotal.lua
+DPSMate_Details_OverhealingTakenTotal.xml

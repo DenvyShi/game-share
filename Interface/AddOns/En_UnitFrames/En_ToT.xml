@@ -1,0 +1,15 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
+    <Script file="En_ToT.lua"/>
+<!-- Target General -->
+    <Frame name="EUF_ToT_General" parent="UIParent">
+        <Scripts>
+        	<OnLoad>
+				EUF_ToT_OnLoad();
+			</OnLoad>
+			<OnEvent>
+				EUF_ToT_OnEvent(event);
+			</OnEvent>
+        </Scripts>
+    </Frame>
+</Ui>

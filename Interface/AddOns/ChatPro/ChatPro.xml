@@ -1,0 +1,276 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/">
+    <Frame name="ChatProCopyFrame" parent="UIParent" hidden="true" toplevel="true" frameStrata="DIALOG" movable="true" enableMouse="true">
+        <Size>
+            <AbsDimension x="450" y="120"/>
+        </Size>
+        <Anchors>
+            <Anchor point="CENTER"/>
+        </Anchors>
+        <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+            <BackgroundInsets>
+                <AbsInset left="11" right="12" top="12" bottom="11"/>
+            </BackgroundInsets>
+            <TileSize>
+                <AbsValue val="32"/>
+            </TileSize>
+            <EdgeSize>
+                <AbsValue val="32"/>
+            </EdgeSize>
+        </Backdrop>
+        <Frames>
+            <ScrollFrame name="ChatProCopyScroll" inherits="UIPanelScrollFrameTemplate">
+                <Size>
+                    <AbsDimension x="390" y="80"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOP">
+                        <Offset>
+                            <AbsDimension x="-10" y="-15"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <ScrollChild>
+                    <EditBox name="ChatProCopyEditBox" multiLine="true" autoFocus="true">
+                        <Size>
+                            <AbsDimension x="390" y="80"/>
+                        </Size>
+                        <Scripts>
+                            <OnEscapePressed>
+                                ChatProCopyFrame:Hide()
+                            </OnEscapePressed>
+                        </Scripts>
+                        <FontString inherits="ChatFontNormal"/>
+                    </EditBox>
+                </ScrollChild>
+            </ScrollFrame>
+            <Button name="ChatProCopyCloseButton" inherits="UIPanelButtonTemplate" text="关闭">
+                <Size>
+                    <AbsDimension x="80" y="22"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="BOTTOM">
+                        <Offset>
+                            <AbsDimension x="0" y="10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        ChatProCopyFrame:Hide()
+                    </OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+        <Scripts>
+            <OnLoad>
+                this:RegisterForDrag("LeftButton")
+            </OnLoad>
+            <OnDragStart>
+                this:StartMoving()
+            </OnDragStart>
+            <OnDragStop>
+                this:StopMovingOrSizing()
+            </OnDragStop>
+        </Scripts>
+    </Frame>
+
+    <Frame name="ChatProConfigFrame" parent="UIParent" hidden="true" toplevel="true" movable="true" enableMouse="true" frameStrata="HIGH">
+        <Size>
+            <AbsDimension x="360" y="420"/>
+        </Size>
+        <Anchors>
+            <Anchor point="CENTER"/>
+        </Anchors>
+        <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+            <BackgroundInsets>
+                <AbsInset left="11" right="12" top="12" bottom="11"/>
+            </BackgroundInsets>
+            <TileSize>
+                <AbsValue val="32"/>
+            </TileSize>
+            <EdgeSize>
+                <AbsValue val="32"/>
+            </EdgeSize>
+        </Backdrop>
+        <Layers>
+            <Layer level="ARTWORK">
+                <Texture name="$parentHeader" file="Interface\DialogFrame\UI-DialogBox-Header">
+                    <Size>
+                        <AbsDimension x="160" y="32"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOP">
+                            <Offset>
+                                <AbsDimension x="0" y="6"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0.2" right="0.8" top="0" bottom="0.6"/>
+                </Texture>
+                <FontString name="$parentTitle" inherits="GameFontNormal" text="ChatPro 设置">
+                    <Anchors>
+                        <Anchor point="TOP" relativeTo="$parentHeader">
+                            <Offset>
+                                <AbsDimension x="0" y="-10"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="ChatProConfigShortChanBtn" inherits="UIPanelButtonTemplate" text="频道简称设置">
+                <Size>
+                    <AbsDimension x="120" y="24"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="BOTTOMLEFT">
+                        <Offset>
+                            <AbsDimension x="30" y="25"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        ChatProConfigFrame:Hide()
+                        ChatProShortChanFrame:Show()
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <Button name="ChatProConfigClose" inherits="UIPanelButtonTemplate" text="保存并关闭">
+                <Size>
+                    <AbsDimension x="120" y="24"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="BOTTOMRIGHT">
+                        <Offset>
+                            <AbsDimension x="-30" y="25"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        ChatProConfigFrame:Hide()
+                        ChatPro_UpdateSettings()
+                    </OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+        <Scripts>
+            <OnLoad>
+                this:RegisterForDrag("LeftButton")
+                tinsert(UISpecialFrames, "ChatProConfigFrame")
+                ChatPro_InitConfigUI()
+            </OnLoad>
+            <OnDragStart>
+                this:StartMoving()
+            </OnDragStart>
+            <OnDragStop>
+                this:StopMovingOrSizing()
+            </OnDragStop>
+            <OnShow>
+                ChatPro_RefreshConfigUI()
+            </OnShow>
+        </Scripts>
+    </Frame>
+    <Frame name="ChatProShortChanFrame" parent="UIParent" hidden="true" toplevel="true" movable="true" enableMouse="true" frameStrata="HIGH">
+        <Size>
+            <AbsDimension x="300" y="420"/>
+        </Size>
+        <Anchors>
+            <Anchor point="CENTER"/>
+        </Anchors>
+        <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+            <BackgroundInsets>
+                <AbsInset left="11" right="12" top="12" bottom="11"/>
+            </BackgroundInsets>
+            <TileSize>
+                <AbsValue val="32"/>
+            </TileSize>
+            <EdgeSize>
+                <AbsValue val="32"/>
+            </EdgeSize>
+        </Backdrop>
+        <Layers>
+            <Layer level="ARTWORK">
+                <Texture name="$parentHeader" file="Interface\DialogFrame\UI-DialogBox-Header">
+                    <Size>
+                        <AbsDimension x="160" y="32"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOP">
+                            <Offset>
+                                <AbsDimension x="0" y="6"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0.2" right="0.8" top="0" bottom="0.6"/>
+                </Texture>
+                <FontString name="$parentTitle" inherits="GameFontNormal" text="频道简称设置">
+                    <Anchors>
+                        <Anchor point="TOP" relativeTo="$parentHeader">
+                            <Offset>
+                                <AbsDimension x="0" y="-8"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString inherits="GameFontNormal" text="原频道名">
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="50" y="-30"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString inherits="GameFontNormal" text="替换为">
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="180" y="-30"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="ChatProShortChanClose" inherits="UIPanelButtonTemplate" text="保存返回">
+                <Size>
+                    <AbsDimension x="120" y="24"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="BOTTOM">
+                        <Offset>
+                            <AbsDimension x="0" y="25"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        ChatPro_SaveShortChanUI()
+                        ChatProShortChanFrame:Hide()
+                        ChatProConfigFrame:Show()
+                    </OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+        <Scripts>
+            <OnLoad>
+                this:RegisterForDrag("LeftButton")
+                tinsert(UISpecialFrames, "ChatProShortChanFrame")
+                ChatPro_InitShortChanUI()
+            </OnLoad>
+            <OnDragStart>
+                this:StartMoving()
+            </OnDragStart>
+            <OnDragStop>
+                this:StopMovingOrSizing()
+            </OnDragStop>
+            <OnShow>
+                ChatPro_RefreshShortChanUI()
+            </OnShow>
+        </Scripts>
+    </Frame>
+</Ui>
