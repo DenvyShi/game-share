@@ -42,6 +42,18 @@ RHGlobal.Unconfirmed = RHGlobal.Unconfirmed or {}
 local RH_Unconfirmed = RHGlobal.Unconfirmed
 local RH_ClockOffset = RH_ClockOffset or {}
 
+-- Localization helper function
+local function L(key, ...)
+    if RallyHelper_L and RallyHelper_L[key] then
+        if type(RallyHelper_L[key]) == "function" then
+            return RallyHelper_L[key](...)
+        else
+            return RallyHelper_L[key]
+        end
+    end
+    return key
+end
+
 local function EnsureDB()
   local realm = GetRealmName() or "UnknownRealm"
   RallyHelperDB = RallyHelperDB or {}
@@ -364,10 +376,10 @@ local function AcceptEvent(ev, ts, zone)
 
   if DB and DB.toastMode then
     if DB.toastMode == "chat" then
-      DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99[RallyHelper]|r " .. ev .. " confirmed")
+      DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99[RallyHelper]|r " .. ev .. " " .. L("confirmed"))
     elseif DB.toastMode == "ui" then
       if type(RallyHelper_ShowToast) == "function" then
-        RallyHelper_ShowToast(ev .. " confirmed")
+        RallyHelper_ShowToast(ev .. " " .. L("confirmed"))
       end
     end
   end
@@ -509,28 +521,28 @@ SlashCmdList["RALLYSOUND"] = function(msg)
   cmd = cmd and cmd:lower() or ""
   if cmd == "on" then
     DB.rhSounds.enabled = true
-    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] Sounds enabled")
+    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] " .. L("Sounds enabled"))
   elseif cmd == "off" then
     DB.rhSounds.enabled = false
-    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] Sounds disabled")
+    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] " .. L("Sounds disabled"))
   elseif cmd == "set" and arg and arg ~= "" then
     local ev, path = arg:match("^(%S+)%s+(.+)$")
     if ev and path and DB.rhSounds.files then
       DB.rhSounds.files[ev] = path
-      DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] Set sound for "..ev)
+      DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] " .. L("Set sound for") .. " " .. ev)
     else
-      DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] Usage: /rallysound set <EVENT> <path>")
+      DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] " .. L("Usage: /rallysound set <EVENT> <path>"))
     end
   elseif cmd == "volume" and arg ~= "" then
     local v = tonumber(arg)
     if v and v >= 0 and v <= 100 then
       DB.rhSounds.volume = v
-      DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] Sound volume set to "..tostring(v))
+      DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] " .. L("Sound volume set to") .. " " .. tostring(v))
     else
-      DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] Usage: /rallysound volume <0-100>")
+      DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] " .. L("Usage: /rallysound volume <0-100>"))
     end
   else
-    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] Commands: on, off, set <EVENT> <path>, volume <0-100>")
+    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] " .. L("Commands: on, off, set <EVENT> <path>, volume <0-100>"))
   end
 end
 
@@ -539,9 +551,9 @@ SlashCmdList["RALLYTOAST"] = function(msg)
   local m = (msg or ""):lower()
   if m == "chat" or m == "ui" or m == "none" then
     DB.toastMode = m
-    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] toastMode set to "..m)
+    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] " .. L("toastMode set to") .. " " .. m)
   else
-    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] Usage: /rallytoast chat|ui|none")
+    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] " .. L("Usage: /rallytoast chat|ui|none"))
   end
 end
 
@@ -552,16 +564,16 @@ SlashCmdList["RALLYIGNORE"] = function(msg)
   if cmd == "add" and name ~= "" then
     DB.rhIgnore = DB.rhIgnore or {}
     DB.rhIgnore[name] = true
-    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] Ignored "..name)
+    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] " .. L("Ignored") .. " " .. name)
   elseif cmd == "remove" and name ~= "" then
     DB.rhIgnore = DB.rhIgnore or {}
     DB.rhIgnore[name] = nil
-    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] Unignored "..name)
+    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] " .. L("Unignored") .. " " .. name)
   elseif cmd == "list" then
     DB.rhIgnore = DB.rhIgnore or {}
     for n, _ in pairs(DB.rhIgnore) do DEFAULT_CHAT_FRAME:AddMessage(n) end
   else
-    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] Usage: /rallyignore add|remove|list <name>")
+    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] " .. L("Usage: /rallyignore add|remove|list <name>"))
   end
 end
 
@@ -840,13 +852,13 @@ local function SafeZoneText()
   return z
 end
 local function FormatAgo(ts)
-  if not ts then return "unknown" end
+  if not ts then return L("unknown") end
   local d = time() - ts
-  if d < 60 then return d .. "s ago" end
-  if d < 3600 then return floor(d / 60) .. "m ago" end
+  if d < 60 then return d .. L("s") .. " " .. L("ago") end
+  if d < 3600 then return floor(d / 60) .. L("m") .. " " .. L("ago") end
   local h = floor(d / 3600)
   local m = floor((d - h * 3600) / 60)
-  return h .. "h " .. m .. "m ago"
+  return h .. L("h") .. " " .. m .. L("m") .. " " .. L("ago")
 end
 
 local function TryDMF()
@@ -868,34 +880,34 @@ local function RequestTimers()
 end
 
 local function FormatTimeSimple(sec)
-  if not sec or sec <= 0 then return "ready" end
+  if not sec or sec <= 0 then return L("ready") end
   local h = math.floor(sec / 3600)
   local m = math.floor((sec - h * 3600) / 60)
-  if h > 0 then return h .. "h " .. m .. "m" end
-  return m .. "m"
+  if h > 0 then return h .. L("h") .. " " .. m .. L("m") end
+  return m .. L("m")
 end
 
 function PrintStatus()
   local now = time()
-  local realm = GetRealmName() or "Unknown"
-  DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99[RallyHelper]|r Realm: " .. realm)
-  DEFAULT_CHAT_FRAME:AddMessage("Ony SW: " .. (DB.lastOnyA and FormatTimeSimple(DB.lastOnyA + ONY_CD - now) or "ready"))
-  DEFAULT_CHAT_FRAME:AddMessage("Ony OG: " .. (DB.lastOnyH and FormatTimeSimple(DB.lastOnyH + ONY_CD - now) or "ready"))
-  DEFAULT_CHAT_FRAME:AddMessage("Nef SW: " .. (DB.lastNefA and FormatTimeSimple(DB.lastNefA + NEF_CD - now) or "ready"))
-  DEFAULT_CHAT_FRAME:AddMessage("Nef OG: " .. (DB.lastNefH and FormatTimeSimple(DB.lastNefH + NEF_CD - now) or "ready"))
-  DEFAULT_CHAT_FRAME:AddMessage("ZG last drop: " .. (DB.lastZG and FormatAgo(DB.lastZG) or "unknown"))
-  DEFAULT_CHAT_FRAME:AddMessage("DMF last seen: " .. (DB.lastDMFTime and FormatAgo(DB.lastDMFTime) or "unknown"))
-  DEFAULT_CHAT_FRAME:AddMessage("Rend: " .. (DB.lastWB and FormatTimeSimple(DB.lastWB + WB_CD - now) or "ready"))
+  local realm = GetRealmName() or L("UnknownRealm")
+  DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99[RallyHelper]|r " .. L("Realm:") .. " " .. realm)
+  DEFAULT_CHAT_FRAME:AddMessage(L("Ony SW:") .. " " .. (DB.lastOnyA and FormatTimeSimple(DB.lastOnyA + ONY_CD - now) or L("ready")))
+  DEFAULT_CHAT_FRAME:AddMessage(L("Ony OG:") .. " " .. (DB.lastOnyH and FormatTimeSimple(DB.lastOnyH + ONY_CD - now) or L("ready")))
+  DEFAULT_CHAT_FRAME:AddMessage(L("Nef SW:") .. " " .. (DB.lastNefA and FormatTimeSimple(DB.lastNefA + NEF_CD - now) or L("ready")))
+  DEFAULT_CHAT_FRAME:AddMessage(L("Nef OG:") .. " " .. (DB.lastNefH and FormatTimeSimple(DB.lastNefH + NEF_CD - now) or L("ready")))
+  DEFAULT_CHAT_FRAME:AddMessage(L("ZG last drop:") .. " " .. (DB.lastZG and FormatAgo(DB.lastZG) or L("unknown")))
+  DEFAULT_CHAT_FRAME:AddMessage(L("DMF last seen:") .. " " .. (DB.lastDMFTime and FormatAgo(DB.lastDMFTime) or L("unknown")))
+  DEFAULT_CHAT_FRAME:AddMessage(L("WB") .. ": " .. (DB.lastWB and FormatTimeSimple(DB.lastWB + WB_CD - now) or L("ready")))
 end
 
 
 
 function ShareTimersToChat()
   local now = time()
-  local text = "Ony SW: " .. (DB.lastOnyA and FormatTimeSimple(DB.lastOnyA + ONY_CD - now) or "ready") ..
-               " | Ony OG: " .. (DB.lastOnyH and FormatTimeSimple(DB.lastOnyH + ONY_CD - now) or "ready") ..
-               " | Nef SW: " .. (DB.lastNefA and FormatTimeSimple(DB.lastNefA + NEF_CD - now) or "ready") ..
-               " | Nef OG: " .. (DB.lastNefH and FormatTimeSimple(DB.lastNefH + NEF_CD - now) or "ready")
+  local text = L("Ony SW:") .. " " .. (DB.lastOnyA and FormatTimeSimple(DB.lastOnyA + ONY_CD - now) or L("ready")) ..
+               " | " .. L("Ony OG:") .. " " .. (DB.lastOnyH and FormatTimeSimple(DB.lastOnyH + ONY_CD - now) or L("ready")) ..
+               " | " .. L("Nef SW:") .. " " .. (DB.lastNefA and FormatTimeSimple(DB.lastNefA + NEF_CD - now) or L("ready")) ..
+               " | " .. L("Nef OG:") .. " " .. (DB.lastNefH and FormatTimeSimple(DB.lastNefH + NEF_CD - now) or L("ready"))
 
   text = strgsub(text, "|c%x%x%x%x%x%x%x%x", "")
   text = strgsub(text, "|r", "")
@@ -1096,18 +1108,18 @@ SlashCmdList["RALLYHELPER"] = function(msg)
     ReloadUI()
   elseif msg == "toast" then
     DB.toast = not DB.toast
-    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] Toast messages: " .. tostring(DB.toast))
+    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] " .. L("Toast messages:") .. " " .. tostring(DB.toast))
   elseif msg == "lock" then
     CharDB.locked = not CharDB.locked
-    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] UI lock: " .. tostring(CharDB.locked))
+    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] " .. L("UI lock:") .. " " .. tostring(CharDB.locked))
   elseif msg == "users" then
-    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] Users online: " .. CountUsers())
+    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] " .. L("Users online:") .. " " .. CountUsers())
   elseif msg == "debug" then
     DB.debug = not DB.debug
-    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] Debug: " .. tostring(DB.debug))
+    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] " .. L("Debug:") .. " " .. tostring(DB.debug))
   elseif msg == "request" then
     RequestTimers()
-    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] Requested timers from channel")
+    DEFAULT_CHAT_FRAME:AddMessage("[RallyHelper] " .. L("Requested timers from channel"))
   elseif msg == "settings" or msg == "config" or msg == "options" then
     RallyHelper_ToggleSettings()
   else
@@ -1146,7 +1158,7 @@ local function RH_ServerRestartDetector(msg)
     DB.lastDMFZone = nil
 
     if DEFAULT_CHAT_FRAME then
-      DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99[RallyHelper]|r Server restart detected. All timers have been reset.")
+      DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99[RallyHelper]|r " .. L("Server restart detected. All timers have been reset."))
     end
 
     if DB.rhSounds and DB.rhSounds.enabled then
