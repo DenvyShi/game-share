@@ -7,6 +7,18 @@ local settingsUI
 local firstTimeUI
 local unconfUI
 
+-- Localization helper function
+local function L(key, ...)
+    if RallyHelper_L and RallyHelper_L[key] then
+        if type(RallyHelper_L[key]) == "function" then
+            return RallyHelper_L[key](...)
+        else
+            return RallyHelper_L[key]
+        end
+    end
+    return key
+end
+
 local BUFF_ICONS = {
   ONY = "Interface\\Icons\\INV_Misc_Head_Dragon_Red",
   NEF = "Interface\\Icons\\INV_Misc_Head_Dragon_Blue",
@@ -105,17 +117,17 @@ function ApplyLayout()
   if filter == "BOTH" then
     ui.onyTitle:SetPoint("TOPLEFT", PAD, -36)
     ui.onyTitle:SetWidth(COL_W - 10)
-    ui.onyTitle:SetText("Horde")
+    ui.onyTitle:SetText(L("HORDE"))
     ui.onyTitle:Show()
 
     ui.nefTitle:SetPoint("TOPLEFT", PAD + COL_W + PAD, -36)
     ui.nefTitle:SetWidth(COL_W - 10)
-    ui.nefTitle:SetText("Alliance")
+    ui.nefTitle:SetText(L("ALLIANCE"))
     ui.nefTitle:Show()
   else
     ui.onyTitle:SetPoint("TOPLEFT", PAD, -36)
     ui.onyTitle:SetWidth(W - PAD*2)
-    ui.onyTitle:SetText(filter == "HORDE" and "Horde" or "Alliance")
+    ui.onyTitle:SetText(filter == "HORDE" and L("HORDE") or L("ALLIANCE"))
     ui.onyTitle:Show()
     ui.nefTitle:Hide()
   end
@@ -255,17 +267,17 @@ function UpdateTexts()
   end
 
   if ui.zg then
-    ui.zg:SetText("ZG last drop: " .. (db.lastZG and FormatAgo(db.lastZG) or "unknown"))
+    ui.zg:SetText(L("ZG last drop:") .. " " .. (db.lastZG and FormatAgo(db.lastZG) or L("unknown")))
   end
 
   if ui.dmf then
-    ui.dmf:SetText("DMF: " .. (db.lastDMFTime and (FormatAgo(db.lastDMFTime) .. " in " .. (db.lastDMFZone or "unknown")) or "unknown"))
+    ui.dmf:SetText(L("DMF") .. ": " .. (db.lastDMFTime and (FormatAgo(db.lastDMFTime) .. " " .. L("in") .. " " .. (db.lastDMFZone or L("unknown"))) or L("unknown")))
   end
 
   if ui.wb then
     ui.wb:SetText(
-      FormatUnconfirmed("WB", "Rend") or
-      ("Rend: " .. Colorize(FormatTime(db.lastWB and (db.lastWB + WB_CD - t) or 0)))
+      FormatUnconfirmed("WB", L("WB")) or
+      (L("WB") .. ": " .. Colorize(FormatTime(db.lastWB and (db.lastWB + WB_CD - t) or 0)))
     )
   end
 end
@@ -406,43 +418,43 @@ function CreateFirstTimeSetup()
   text:SetWidth(380)
   text:SetJustifyH("LEFT")
   text:SetText(
-    "Welcome to RallyHelper!\n\n" ..
-    "Please select which world buffs you want to track:\n\n" ..
-    "|cff33ff99Horde|r: Onyxia, Nefarian, Warchief's Blessing, ZG, DMF\n" ..
-    "|cff3399ffAlliance|r: Onyxia, Nefarian, ZG, DMF\n" ..
-    "|cffffffffBoth|r: All buffs from both factions\n\n" ..
-    "You can change this later with /rally settings"
+    L("Welcome to RallyHelper!") .. "\n\n" ..
+    L("Please select which world buffs you want to track:") .. "\n\n" ..
+    "|cff33ff99" .. L("HORDE") .. "|r: " .. L("ONY") .. ", " .. L("NEF") .. ", " .. L("WB") .. ", " .. L("ZG") .. ", " .. L("DMF") .. "\n" ..
+    "|cff3399ff" .. L("ALLIANCE") .. "|r: " .. L("ONY") .. ", " .. L("NEF") .. ", " .. L("ZG") .. ", " .. L("DMF") .. "\n" ..
+    "|cffffffff" .. L("BOTH") .. "|r: " .. L("All buffs from both factions") .. "\n\n" ..
+    L("You can change this later with /rally settings")
   )
 
   local yPos = -165
 
   local hordeBtn = CreateFrame("Button", nil, firstTimeUI, "UIPanelButtonTemplate")
   hordeBtn:SetWidth(110) hordeBtn:SetHeight(28) hordeBtn:SetPoint("TOP", -120, yPos)
-  hordeBtn:SetText("|cffff3333Horde|r")
+  hordeBtn:SetText("|cffff3333" .. L("HORDE") .. "|r")
   hordeBtn:SetScript("OnClick", function()
     if type(RH_SetFactionFilter) == "function" then RH_SetFactionFilter("HORDE") end
     firstTimeUI:Hide()
-    DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99[RallyHelper]|r Faction filter set to Horde")
+    DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99[RallyHelper]|r " .. L("Faction filter set to") .. " " .. L("HORDE"))
     if ui then ApplyLayout() end
   end)
 
   local allianceBtn = CreateFrame("Button", nil, firstTimeUI, "UIPanelButtonTemplate")
   allianceBtn:SetWidth(110) allianceBtn:SetHeight(28) allianceBtn:SetPoint("TOP", 0, yPos)
-  allianceBtn:SetText("|cff3399ffAlliance|r")
+  allianceBtn:SetText("|cff3399ff" .. L("ALLIANCE") .. "|r")
   allianceBtn:SetScript("OnClick", function()
     if type(RH_SetFactionFilter) == "function" then RH_SetFactionFilter("ALLIANCE") end
     firstTimeUI:Hide()
-    DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99[RallyHelper]|r Faction filter set to Alliance")
+    DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99[RallyHelper]|r " .. L("Faction filter set to") .. " " .. L("ALLIANCE"))
     if ui then ApplyLayout() end
   end)
 
   local bothBtn = CreateFrame("Button", nil, firstTimeUI, "UIPanelButtonTemplate")
   bothBtn:SetWidth(110) bothBtn:SetHeight(28) bothBtn:SetPoint("TOP", 120, yPos)
-  bothBtn:SetText("Both")
+  bothBtn:SetText(L("BOTH"))
   bothBtn:SetScript("OnClick", function()
     if type(RH_SetFactionFilter) == "function" then RH_SetFactionFilter("BOTH") end
     firstTimeUI:Hide()
-    DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99[RallyHelper]|r Faction filter set to Both")
+    DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99[RallyHelper]|r " .. L("Faction filter set to") .. " " .. L("BOTH"))
     if ui then ApplyLayout() end
   end)
 end
@@ -486,11 +498,11 @@ function CreateSettingsUI()
 
   local title = settingsUI:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
   title:SetPoint("TOP", 0, -18)
-  title:SetText("RallyHelper Settings")
+  title:SetText("RallyHelper " .. L("Settings"))
 
   local factionLabel = CreateFS(settingsUI, 14, 1, 1, 1)
   factionLabel:SetPoint("TOPLEFT", 25, -55)
-  factionLabel:SetText("Faction Filter:")
+  factionLabel:SetText(L("Faction Filter:"))
 
   local currentFilter = CreateFS(settingsUI, 13, 0.8, 0.8, 0.8)
   currentFilter:SetPoint("TOPLEFT", 25, -75)
@@ -531,7 +543,7 @@ function CreateSettingsUI()
 
   local bothBtn = CreateFrame("Button", nil, settingsUI, "UIPanelButtonTemplate")
   bothBtn:SetWidth(100) bothBtn:SetHeight(24) bothBtn:SetPoint("TOPLEFT", 245, yPos)
-  bothBtn:SetText("Both")
+  bothBtn:SetText(L("BOTH"))
   bothBtn:SetScript("OnClick", function()
     if type(RH_SetFactionFilter) == "function" then RH_SetFactionFilter("BOTH") end
     UpdateFilterDisplay()
@@ -541,11 +553,11 @@ function CreateSettingsUI()
 
   local uiLabel = CreateFS(settingsUI, 14, 1, 1, 1)
   uiLabel:SetPoint("TOPLEFT", 25, -145)
-  uiLabel:SetText("UI Settings:")
+  uiLabel:SetText(L("UI Settings:"))
 
   local widthText = CreateFS(settingsUI, 13)
   widthText:SetPoint("TOPLEFT", 25, -170)
-  widthText:SetText("Width")
+  widthText:SetText(L("Width"))
 
   local widthSlider = CreateFrame("Slider", nil, settingsUI, "OptionsSliderTemplate")
   widthSlider:SetPoint("TOPLEFT", 25, -188)
@@ -564,7 +576,7 @@ function CreateSettingsUI()
 
   local heightText = CreateFS(settingsUI, 13)
   heightText:SetPoint("TOPLEFT", 25, -225)
-  heightText:SetText("Height")
+  heightText:SetText(L("Height"))
 
   local heightSlider = CreateFrame("Slider", nil, settingsUI, "OptionsSliderTemplate")
   heightSlider:SetPoint("TOPLEFT", 25, -243)
@@ -624,7 +636,7 @@ function CreateSettingsUI()
   close:SetWidth(100) 
   close:SetHeight(26) 
   close:SetPoint("BOTTOM", 0, 18)
-  close:SetText("Close")
+  close:SetText(L("Close"))
   close:SetScript("OnClick", function() settingsUI:Hide() end)
 end
 

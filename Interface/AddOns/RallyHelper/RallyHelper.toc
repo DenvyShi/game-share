@@ -6,5 +6,6 @@
 ## SavedVariables: RallyHelperDB
 ## SavedVariablesPerCharacter: RallyHelperCharDB
 
+RallyHelper_Locale.lua
 RallyHelper_Core.lua
 RallyHelper_UI.lua
